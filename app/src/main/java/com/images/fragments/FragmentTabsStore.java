@@ -12,6 +12,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import com.google.gson.Gson;
 import com.images.GenerateToast;
+import com.images.adapters.AdapterCityNews;
 import com.images.adapters.AdapterTopNews;
 import com.images.common.ViewAnimation;
 import com.images.models.timesofindia.ItemItem;
@@ -47,8 +48,6 @@ public class FragmentTabsStore extends Fragment {
         lyt_progress = root.findViewById(R.id.lyt_progress);
         dataLoad();
 
-//        Toast.makeText(getActivity(), "", Toast.LENGTH_SHORT).show();
-
         return root;
     }
 
@@ -76,7 +75,7 @@ public class FragmentTabsStore extends Fragment {
 
 
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity(), LinearLayoutManager.VERTICAL, false));
-        AdapterTopNews adapterTopNews = new AdapterTopNews(getActivity(), newsItemItems);
+        AdapterCityNews adapterTopNews = new AdapterCityNews(getActivity(), newsItemItems);
         recyclerView.setAdapter(adapterTopNews);
         recyclerView.setOnFlingListener(null);
 
@@ -120,8 +119,12 @@ public class FragmentTabsStore extends Fragment {
                 List<NewsItemItem> newsItemItems;
                 TopNewsRes newsResponse = gson.fromJson(s,TopNewsRes.class);
                 newsItemItems = newsResponse.getNewsItem();
-                initComponent(newsItemItems);
+                if(newsItemItems!=null) {
+                    if(newsItemItems.size()>0){
+                        initComponent(newsItemItems);
+                    }
 
+                }
 
             } catch (Exception e){
                 GenerateToast.showErrorToastWOI(getActivity(), e.toString());

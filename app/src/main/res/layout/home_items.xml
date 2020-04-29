@@ -5,8 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     app:cardBackgroundColor="@android:color/holo_red_dark"
-    app:cardCornerRadius="@dimen/px_5.0_dp"
-    app:cardElevation="@dimen/px_2.0_dp">
+    app:cardCornerRadius="@dimen/px_15.0_dp"
+    app:cardElevation="@dimen/px_15.0_dp">
 
     <com.balysv.materialripple.MaterialRippleLayout
         style="@style/RippleStyleBlack"
@@ -24,8 +24,8 @@
 
             <ImageView
                 android:id="@+id/image"
-                android:layout_width="@dimen/px_80.0_dp"
-                android:layout_height="@dimen/px_80.0_dp"
+                android:layout_width="@dimen/px_70.0_dp"
+                android:layout_height="@dimen/px_70.0_dp"
 
                 android:src="@drawable/ic_event" />
 

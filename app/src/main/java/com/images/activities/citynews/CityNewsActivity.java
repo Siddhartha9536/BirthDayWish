@@ -8,6 +8,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
@@ -37,12 +38,14 @@ public class CityNewsActivity extends AppCompatActivity {
 
     private ViewPager view_pager;
     private TabLayout tab_layout;
-    private final static int LOADING_DURATION = 3500;
+    private final static int LOADING_DURATION = 5500;
     ItemItem itemItem;
     List<com.images.models.timesofindia.citynews.ItemItem> itemItems;
     Context context;
     @BindView(R.id.lyt_progress)
     LinearLayout lyt_progress;
+    @BindView(R.id.heading_text)
+    TextView heading_text;
 
 
 
@@ -55,6 +58,9 @@ public class CityNewsActivity extends AppCompatActivity {
         ButterKnife.bind(this);
         itemItem = (ItemItem) getIntent().getSerializableExtra("data");
         Log.d("TAG", "onCreate: " + itemItem.toString());
+        if(itemItem!=null){
+            heading_text.setText(itemItem.getDefaultname());
+        }
 
         lyt_progress.setVisibility(View.VISIBLE);
         lyt_progress.setAlpha(1.0f);
@@ -99,11 +105,6 @@ public class CityNewsActivity extends AppCompatActivity {
         tab_layout = (TabLayout) findViewById(R.id.tab_layout);
         tab_layout.setupWithViewPager(view_pager);
     }
-
-
-
-
-
 
 
     private class SectionsPagerAdapter extends FragmentPagerAdapter {
@@ -174,8 +175,6 @@ public class CityNewsActivity extends AppCompatActivity {
                 GenerateToast.showErrorToastWOI(context, e.toString());
             }
         }
-
-
     }
 
 

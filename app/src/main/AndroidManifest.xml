@@ -2,6 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.restaurant.birthdaywish">
 
+    <uses-permission android:name="android.permission.CALL_PHONE" />
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
@@ -13,14 +14,13 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name="com.images.activities.ShowImageActivity"></activity>
+        <activity android:name="com.images.activities.FullStoryOfNews"></activity>
+        <activity android:name="com.images.activities.ShowImageActivity" />
         <activity android:name="com.images.activities.topnews.NewsPageActivity" />
         <activity android:name="com.images.activities.LoveCalculatorActivity" />
         <activity android:name="com.images.activities.Covid19StatsActivity" />
         <activity android:name="com.images.activities.Covid19Activity" />
-        <activity android:name="com.images.activities.MultiItemActivity">
-
-        </activity>
+        <activity android:name="com.images.activities.MultiItemActivity"></activity>
         <activity android:name="com.images.SplashScreenActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

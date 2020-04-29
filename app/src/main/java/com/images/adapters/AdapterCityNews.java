@@ -2,12 +2,13 @@ package com.images.adapters;
 
 import android.content.Context;
 import android.content.Intent;
-import android.graphics.drawable.Drawable;
 import android.text.Html;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.ScrollView;
 import android.widget.TextView;
 
 import androidx.recyclerview.widget.RecyclerView;
@@ -15,7 +16,6 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.blogspot.atifsoftwares.animatoolib.Animatoo;
 import com.images.activities.FullStoryOfNews;
 import com.images.activities.ShowImageActivity;
-import com.images.models.homeitems.HomeItems;
 import com.images.models.timesofindia.topnews.Image;
 import com.images.models.timesofindia.topnews.NewsItemItem;
 import com.restaurant.birthdaywish.R;
@@ -24,13 +24,13 @@ import com.squareup.picasso.Picasso;
 import java.util.ArrayList;
 import java.util.List;
 
-public class AdapterTopNews extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
+public class AdapterCityNews extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
     private List<NewsItemItem> items = new ArrayList<>();
 
     private Context ctx;
 
-    public AdapterTopNews(Context context, List<NewsItemItem> items) {
+    public AdapterCityNews(Context context, List<NewsItemItem> items) {
         this.items = items;
         ctx = context;
     }
@@ -42,6 +42,10 @@ public class AdapterTopNews extends RecyclerView.Adapter<RecyclerView.ViewHolder
         public TextView caption;
         public TextView dateline;
         public TextView ByLine;
+        public LinearLayout by_lyt;
+        public LinearLayout date_lyt;
+        public LinearLayout head_lyt;
+        public ScrollView brief_scroll;
 
         public OriginalViewHolder(View v) {
             super(v);
@@ -50,14 +54,22 @@ public class AdapterTopNews extends RecyclerView.Adapter<RecyclerView.ViewHolder
             brief = (TextView) v.findViewById(R.id.brief);
             caption = (TextView) v.findViewById(R.id.caption);
             ByLine = (TextView) v.findViewById(R.id.ByLine);
+
+
             dateline = (TextView) v.findViewById(R.id.dateline);
+            brief_scroll = (ScrollView) v.findViewById(R.id.brief_scroll);
+            head_lyt = (LinearLayout) v.findViewById(R.id.head_lyt);
+            by_lyt = (LinearLayout) v.findViewById(R.id.by_lyt);
+            date_lyt = (LinearLayout) v.findViewById(R.id.date_lyt);
+
+
         }
     }
 
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         RecyclerView.ViewHolder vh;
-        View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_snap_news, parent, false);
+        View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.fragment_city_news, parent, false);
         vh = new OriginalViewHolder(v);
         return vh;
     }
@@ -71,25 +83,59 @@ public class AdapterTopNews extends RecyclerView.Adapter<RecyclerView.ViewHolder
             NewsItemItem p = items.get(position);
             Image image1 = p.getImage();
 
-            view.name.setText(p.getHeadLine());
-            view.brief.setText(Html.fromHtml(p.getStory() + ""));
+            if(p.getHeadLine()!=null){
+                if(p.getHeadLine().equals("")){
+                    view.head_lyt.setVisibility(View.GONE);
+                }else{
+                    view.head_lyt.setVisibility(View.VISIBLE);
+                    view.name.setText(p.getHeadLine());
+                }
+
+            }
+            if(p.getDateLine()!=null){
+                if(p.getDateLine().equals("")){
+                    view.date_lyt.setVisibility(View.GONE);
+                }else{
+                    view.date_lyt.setVisibility(View.VISIBLE);
+                    view.dateline.setText(Html.fromHtml(p.getDateLine() + ""));
+                }
+
+            }
+            if(p.getStory()!=null){
+                if(p.getStory().equals("")){
+                    view.brief_scroll.setVisibility(View.GONE);
+                }else{
+                    view.brief_scroll.setVisibility(View.VISIBLE);
+                    view.brief.setText(Html.fromHtml(p.getStory() + ""));
+                }
+            }
+
             if(image1.getPhotoCaption()!=null){
-                view.caption.setText(Html.fromHtml("Photo Caption: "+image1.getPhotoCaption() + ""));
-            }
+                if(image1.getPhotoCaption().equals("")){
+                    view.caption.setVisibility(View.GONE);
+                }else{
+                    view.caption.setVisibility(View.VISIBLE);
+                    view.caption.setText(Html.fromHtml("Photo Caption: "+image1.getPhotoCaption() + ""));
+                }
 
-            view.dateline.setText(Html.fromHtml(p.getDateLine() + ""));
+            }
             if(p.getByLine()!=null){
-                view.ByLine.setText(Html.fromHtml("By: "+p.getByLine() + ""));
-            }
+                if(p.getByLine().equals("")){
+                    view.by_lyt.setVisibility(View.GONE);
+                }else{
+                    view.by_lyt.setVisibility(View.VISIBLE);
+                    view.ByLine.setText(Html.fromHtml("By: "+p.getByLine() + ""));
+                }
 
+            }
 
             if(image1.getPhoto().charAt((image1.getPhoto().length())-1) == '='){
                 view.image.post(new Runnable() {
                     @Override
                     public void run() {
-                        Picasso.with(ctx)
-                                .load(image1.getPhoto().replace("http" , "https") + p.getNewsItemId())
-                                .into(view.image);
+                         Picasso.with(ctx)
+                        .load(image1.getPhoto().replace("http" , "https") + p.getNewsItemId())
+                        .into(view.image);
 
                     }
                 });
@@ -98,8 +144,8 @@ public class AdapterTopNews extends RecyclerView.Adapter<RecyclerView.ViewHolder
                     @Override
                     public void run() {
                         Picasso.with(ctx)
-                                .load(image1.getPhoto().replace("http" , "https"))
-                                .into(view.image);
+                        .load(image1.getPhoto().replace("http" , "https"))
+                        .into(view.image);
                     }
                 });
             }
@@ -122,6 +168,7 @@ public class AdapterTopNews extends RecyclerView.Adapter<RecyclerView.ViewHolder
                     }
                 }
             });
+
             view.name.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {

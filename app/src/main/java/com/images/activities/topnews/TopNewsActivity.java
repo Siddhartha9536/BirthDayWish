@@ -5,6 +5,7 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -35,6 +36,8 @@ public class TopNewsActivity extends AppCompatActivity {
     Context context;
     @BindView(R.id.back_icon)
     ImageView back_icon;
+    @BindView(R.id.title)
+    TextView title;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,6 +46,9 @@ public class TopNewsActivity extends AppCompatActivity {
         context = TopNewsActivity.this;
         ButterKnife.bind(this);
         itemItem = (ItemItem) getIntent().getSerializableExtra("data");
+        if(itemItem!=null){
+            title.setText(itemItem.getDefaultname());
+        }
         Log.d("TAG", "onCreate: " + itemItem.toString());
         OkHttpHandler ok = new OkHttpHandler();
         ok.execute();
@@ -77,9 +83,20 @@ public class TopNewsActivity extends AppCompatActivity {
         protected String doInBackground(String...params) {
 
             OkHttpClient client = new OkHttpClient();
-
+            String url = "";
+            if(itemItem.getDefaulturl()!=null){
+                if(!itemItem.getDefaulturl().equals("")){
+                    url = itemItem.getDefaulturl();
+                } else {
+                    if(itemItem.getSectionurl()!=null){
+                        if(!itemItem.getSectionurl().equals("")){
+                            url = itemItem.getSectionurl();
+                        }
+                    }
+                }
+            }
             Request request = new Request.Builder()
-                    .url(itemItem.getDefaulturl().replace("http", "https"))
+                    .url(url.replace("http", "https"))
                     .get()
                     .build();
 
@@ -100,8 +117,11 @@ public class TopNewsActivity extends AppCompatActivity {
 
                 TopNewsRes newsResponse = gson.fromJson(s,TopNewsRes.class);
                 newsItemItems = newsResponse.getNewsItem();
-                initComponent(newsItemItems);
-
+                if(newsItemItems!=null){
+                    if(newsResponse.getNewsItem().size()>0){
+                        initComponent(newsItemItems);
+                    }
+                }
 
             } catch (Exception e){
                 GenerateToast.showErrorToastWOI(context, e.toString());

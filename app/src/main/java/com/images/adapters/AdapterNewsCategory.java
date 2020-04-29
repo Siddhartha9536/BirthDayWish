@@ -82,11 +82,11 @@ public class AdapterNewsCategory extends RecyclerView.Adapter<RecyclerView.ViewH
 
     @Override
     public int getItemCount() {
-        if(items.size()>1){
-        return 2;
-        }else{
+//        if(items.size()>1){
+//        return 5;
+//        }else{
             return items.size();
-        }
+//        }
     }
 
 }

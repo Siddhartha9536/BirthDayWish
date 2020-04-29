@@ -6,6 +6,7 @@
     android:layout_height="@dimen/px_250.0_dp"
     app:cardBackgroundColor="@android:color/holo_red_dark"
     app:cardCornerRadius="@dimen/px_25.0_dp"
+    android:layout_margin="@dimen/px_15.0_dp"
     app:cardElevation="@dimen/px_5.0_dp">
 
     <com.balysv.materialripple.MaterialRippleLayout

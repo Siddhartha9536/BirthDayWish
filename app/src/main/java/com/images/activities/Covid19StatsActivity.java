@@ -9,14 +9,10 @@ import android.content.Context;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
-import android.text.Editable;
-import android.text.TextWatcher;
 import android.util.Log;
 import android.view.View;
-import android.view.animation.Animation;
 import android.widget.ImageView;
 import android.widget.TextView;
-
 import com.blogspot.atifsoftwares.animatoolib.Animatoo;
 import com.images.GenerateToast;
 import com.images.adapters.Corona19IndiaAdapter;
@@ -30,10 +26,8 @@ import com.images.models.worldcovidstatus.ResponseItem;
 import com.images.models.worldcovidstatus.Tests;
 import com.images.network.ApiNetwork;
 import com.restaurant.birthdaywish.R;
-
 import java.util.ArrayList;
 import java.util.List;
-
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;

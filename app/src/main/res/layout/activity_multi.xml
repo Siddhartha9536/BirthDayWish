@@ -18,11 +18,11 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_gravity="center"
-                android:layout_weight=".20"
+                android:layout_weight=".15"
                 android:gravity="center">
 
                 <ImageView
-                    android:id="@+id/back_icon"
+                    android:id="@+id/family_icon"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:padding="@dimen/px_10.0_dp"
@@ -35,7 +35,7 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_gravity="center"
-                android:layout_weight=".80"
+                android:layout_weight=".70"
                 android:gravity="center"
                 android:fontFamily="@font/semibold"
                 android:text="HAPPY FAMILY"
@@ -44,20 +44,20 @@
 
 
             </TextView>
-<!--            <LinearLayout-->
-<!--                android:layout_width="0dp"-->
-<!--                android:layout_height="match_parent"-->
-<!--                android:layout_gravity="center"-->
-<!--                android:layout_weight=".15"-->
-<!--                android:gravity="center">-->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_weight=".15"
+                android:gravity="center">
 
-<!--&lt;!&ndash;                <de.hdodenhof.circleimageview.CircleImageView&ndash;&gt;-->
-<!--&lt;!&ndash;                    android:layout_width="match_parent"&ndash;&gt;-->
-<!--&lt;!&ndash;                    android:layout_height="match_parent"&ndash;&gt;-->
-<!--&lt;!&ndash;                    android:padding="@dimen/px_10.0_dp"&ndash;&gt;-->
-<!--&lt;!&ndash;                    android:src="@drawable/ic_logout_blue" />&ndash;&gt;-->
+<!--                <de.hdodenhof.circleimageview.CircleImageView-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="match_parent"-->
+<!--                    android:padding="@dimen/px_10.0_dp"-->
+<!--                    android:src="@drawable/ic_logout_blue" />-->
 
-<!--            </LinearLayout>-->
+            </LinearLayout>
 
 
         </LinearLayout>
@@ -206,6 +206,7 @@
                             android:layout_height="match_parent"
                             android:layout_marginTop="-50dp"
                             android:paddingLeft="@dimen/px_10.0_dp"
+                            android:layout_marginBottom="@dimen/px_40.0_dp"
                             android:paddingRight="@dimen/px_10.0_dp"
                             android:scrollbars="vertical"
                             android:scrollingCache="true" />
@@ -222,8 +223,8 @@
                         android:orientation="vertical">
 
                         <com.images.widgets.ViewLoadingDotsBounce
-                            android:layout_width="50dp"
-                            android:layout_height="40dp"
+                            android:layout_width="70dp"
+                            android:layout_height="80dp"
                             android:background="@color/pink_300" />
 
                     </LinearLayout>

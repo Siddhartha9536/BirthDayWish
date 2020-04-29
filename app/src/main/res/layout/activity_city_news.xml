@@ -127,7 +127,7 @@
 
                     <com.images.widgets.ViewLoadingDotsBounce
                         android:layout_width="70dp"
-                        android:layout_height="60dp"
+                        android:layout_height="80dp"
                         android:background="@android:color/holo_purple" />
 
                 </LinearLayout>
