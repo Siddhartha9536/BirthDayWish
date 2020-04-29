@@ -1,0 +1,265 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/gradient_1">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_margin="@dimen/px_14.0_dp"
+        android:orientation="vertical"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:id="@+id/jai_ram"
+            android:visibility="visible"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/px_80.0_dp"
+            android:background="@drawable/rounder_ended_1">
+
+            <TextView
+                android:src="@drawable/imag3"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:fontFamily="@font/mazzardhbold"
+                android:gravity="center"
+                android:text="| |  COVID - 19  INDIA STATUS  | |"
+                android:textSize="@dimen/px_22.0_dp"
+                android:textColor="@color/white" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/search_lyt"
+            android:visibility="visible"
+            android:layout_marginTop="@dimen/px_20.0_dp"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/px_80.0_dp"
+            android:background="@drawable/rounder_ended_1">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center|start"
+                android:gravity="center|start"
+                android:layout_margin="@dimen/px_14.0_dp"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginRight="@dimen/px_5.0_dp"
+                    android:src="@android:drawable/ic_search_category_default" />
+
+                <Spinner
+                    android:id="@+id/search_spinner"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:fontFamily="@font/mazzardhbold"
+                    android:gravity="center"
+                    android:text="Select State"
+                    android:entries="@array/india_states"
+                    android:textSize="@dimen/px_14.0_dp"
+                    android:textColor="@color/white" />
+
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:visibility="visible"
+            android:layout_marginTop="@dimen/px_20.0_dp"
+            android:layout_width="@dimen/px_120.0_dp"
+            android:layout_gravity="right"
+            android:layout_height="@dimen/px_50.0_dp"
+            android:background="@drawable/rounder_ended_1">
+
+            <LinearLayout
+                android:layout_width="@dimen/px_120.0_dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="center|start"
+                android:gravity="center|start"
+                android:layout_margin="@dimen/px_14.0_dp"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/search_button"
+                    android:layout_width="match_parent"
+                    android:gravity="center"
+                    android:layout_height="match_parent"
+                    android:background="@android:color/transparent"
+                    android:layout_marginRight="@dimen/px_5.0_dp"
+                    android:fontFamily="@font/semibold"
+                    android:textSize="@dimen/px_13.0_dp"
+                    android:text="Search"/>
+
+
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/covid_lyt"
+            android:layout_marginTop="@dimen/px_14.0_dp"
+            android:visibility="gone"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/px_320.0_dp"
+            android:background="@drawable/rounder_ended_1">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center|start"
+                android:gravity="center|start"
+                android:layout_margin="@dimen/px_14.0_dp"
+                android:orientation="vertical">
+
+                <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/state_name"
+                            android:fontFamily="@font/mazzardh_regular"
+                            android:padding="@dimen/px_5.0_dp"
+                            android:textColor="@android:color/white"
+                            android:textSize="@dimen/px_14_sp"
+                            android:layout_margin="@dimen/px_10.0_dp" />
+
+                        <TextView
+                            android:id="@+id/state_name"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text=""
+                            android:fontFamily="@font/mazzardh_regular"
+                            android:padding="@dimen/px_5.0_dp"
+                            android:textColor="@android:color/white"
+                            android:textSize="@dimen/px_14_sp"
+                            android:layout_margin="@dimen/px_10.0_dp" />
+
+                    </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/confirmed"
+                        android:fontFamily="@font/mazzardh_regular"
+                        android:padding="@dimen/px_5.0_dp"
+                        android:textColor="@android:color/white"
+                        android:textSize="@dimen/px_14_sp"
+                        android:layout_margin="@dimen/px_10.0_dp" />
+
+                    <TextView
+                        android:id="@+id/confirmed"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text=""
+                        android:fontFamily="@font/mazzardh_regular"
+                        android:padding="@dimen/px_5.0_dp"
+                        android:textColor="@android:color/white"
+                        android:textSize="@dimen/px_14_sp"
+                        android:layout_margin="@dimen/px_10.0_dp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/active"
+                        android:fontFamily="@font/mazzardh_regular"
+                        android:padding="@dimen/px_5.0_dp"
+                        android:textColor="@android:color/white"
+                        android:textSize="@dimen/px_14_sp"
+                        android:layout_margin="@dimen/px_10.0_dp" />
+
+                    <TextView
+                        android:id="@+id/active_case"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text=""
+                        android:fontFamily="@font/mazzardh_regular"
+                        android:padding="@dimen/px_5.0_dp"
+                        android:textColor="@android:color/white"
+                        android:textSize="@dimen/px_14_sp"
+                        android:layout_margin="@dimen/px_10.0_dp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/recovered"
+                        android:fontFamily="@font/mazzardh_regular"
+                        android:padding="@dimen/px_5.0_dp"
+                        android:textColor="@android:color/white"
+                        android:textSize="@dimen/px_14_sp"
+                        android:layout_margin="@dimen/px_10.0_dp" />
+
+                    <TextView
+                        android:id="@+id/recovered"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text=""
+                        android:fontFamily="@font/mazzardh_regular"
+                        android:padding="@dimen/px_5.0_dp"
+                        android:textColor="@android:color/white"
+                        android:textSize="@dimen/px_14_sp"
+                        android:layout_margin="@dimen/px_10.0_dp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/deaths"
+                        android:fontFamily="@font/mazzardh_regular"
+                        android:padding="@dimen/px_5.0_dp"
+                        android:textColor="@android:color/white"
+                        android:textSize="@dimen/px_14_sp"
+                        android:layout_margin="@dimen/px_10.0_dp" />
+
+                    <TextView
+                        android:id="@+id/deaths"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text=""
+                        android:fontFamily="@font/mazzardh_regular"
+                        android:padding="@dimen/px_5.0_dp"
+                        android:textColor="@android:color/white"
+                        android:textSize="@dimen/px_14_sp"
+                        android:layout_margin="@dimen/px_10.0_dp" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+
+    </LinearLayout>
+
+
+</androidx.core.widget.NestedScrollView>

@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/main_content"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/grey_10">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/px_60.0_dp"
+                android:orientation="horizontal"
+                android:background="@android:color/holo_red_dark"
+                android:weightSum="1">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:layout_weight=".15"
+                    android:gravity="center">
+
+                    <ImageView
+                        android:id="@+id/back_icon"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:padding="@dimen/px_10.0_dp"
+                        android:src="@drawable/ic_back"></ImageView>
+
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/heading_text"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:layout_weight=".70"
+                    android:gravity="center"
+                    android:fontFamily="@font/semibold"
+                    android:text="CITIES NEWS"
+                    android:textColor="@android:color/holo_orange_light"
+                    android:textSize="@dimen/px_23.0_dp">
+
+
+                </TextView>
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:layout_weight=".15"
+                    android:gravity="center">
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:padding="@dimen/px_10.0_dp"
+                        android:src="@drawable/ic_news" />
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/px_2.0_dp"
+                android:background="@color/black"
+                />
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+               <LinearLayout
+                   android:layout_width="match_parent"
+                   android:layout_height="match_parent"
+                   android:orientation="vertical">
+
+
+               <LinearLayout
+                   android:layout_width="match_parent"
+                   android:layout_height="@dimen/px_60.0_dp"
+                   android:orientation="horizontal">
+                       <com.google.android.material.tabs.TabLayout
+                           android:id="@+id/tab_layout"
+                           android:layout_width="match_parent"
+                           android:background="@drawable/insta_gradient_2"
+                           android:layout_height="@dimen/px_60.0_dp"
+                           app:tabGravity="fill"
+                           app:tabMaxWidth="@dimen/px_150.0_dp"
+                           app:tabMinWidth="@dimen/px_110.0_dp"
+                           app:tabPadding="@dimen/px_2.0_dp"
+                           app:tabIndicatorColor="@android:color/white"
+                           app:tabIndicatorHeight="3dp"
+                           app:tabMode="scrollable"
+                           app:tabSelectedTextColor="@android:color/black"
+                           app:tabTextAppearance="@style/TextAppearance.Subhead.Bold"
+                           app:tabTextColor="@color/black" />
+               </LinearLayout>
+
+
+
+                <androidx.viewpager.widget.ViewPager
+                    android:id="@+id/view_pager"
+                    android:background="@color/black"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+
+
+               </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/lyt_progress"
+                    android:visibility="visible"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:layout_gravity="center"
+                    android:layout_centerInParent="true"
+                    android:layout_margin="@dimen/px_15.0_dp"
+                    android:orientation="vertical">
+
+                    <com.images.widgets.ViewLoadingDotsBounce
+                        android:layout_width="70dp"
+                        android:layout_height="60dp"
+                        android:background="@android:color/holo_purple" />
+
+                </LinearLayout>
+
+
+
+            </FrameLayout>
+        </LinearLayout>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

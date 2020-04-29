@@ -1,0 +1,62 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="@style/Theme.AppCompat.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@android:color/holo_red_dark</item>
+        <item name="colorPrimaryDark">@android:color/holo_red_dark</item>
+        <item name="colorAccent">@android:color/holo_red_dark</item>
+
+
+<!--        <item name="android:windowNoTitle">true</item>-->
+<!--        <item name="android:windowActionBar">true</item>-->
+<!--&lt;!&ndash;        <item name="android:windowFullscreen">true</item>&ndash;&gt;-->
+<!--        <item name="android:windowContentOverlay">@null</item>-->
+
+    </style>
+    <style name="AppTheme.NoActionBar">
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowActionBar">false</item>
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+    </style>
+
+
+    <style name="ThemeWithCorners" parent="@style/Theme.AppCompat.Dialog">
+
+        <!-- No backgrounds, titles or window float -->
+        <item name="android:windowBackground">@null</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowIsFloating">false</item>
+
+
+        <item name="android:windowFrame">@null</item>
+
+        <!-- Full width -->
+        <item name="android:layout_width">fill_parent</item>
+
+        <!-- Null window background kills surrounding padding -->
+
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowAnimationStyle">@android:style/Animation.Dialog</item>
+
+    </style>
+    <style name="DialogTheme" parent="Theme.AppCompat.Light">
+        <item name="colorAccent">@color/blue_dark</item>
+    </style>
+    <style name="RippleStyleWhite">
+        <item name="mrl_rippleOverlay">true</item>
+        <item name="mrl_rippleColor">#80FFFFFF</item>
+        <item name="mrl_rippleHover">true</item>
+        <item name="mrl_rippleAlpha">0.2</item>
+    </style>
+    <style name="RippleStyleBlack" parent="RippleStyleWhite">
+        <item name="mrl_rippleColor">#8096989A</item>
+    </style>
+    <style name="TextAppearance.Subhead.Bold" parent="@style/TextAppearance.AppCompat.Subhead">
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/purple_light</item>
+        <item name="android:textSize">@dimen/px_18.0_dp</item>
+    </style>
+
+</resources>

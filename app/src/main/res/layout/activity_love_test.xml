@@ -1,0 +1,452 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@android:color/holo_red_dark"
+    tools:context="com.images.activities.LoveCalculatorActivity">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/px_60.0_dp"
+            android:orientation="horizontal"
+            android:background="@android:color/holo_red_dark"
+            android:weightSum="1">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_weight=".15"
+                android:gravity="center">
+
+                <ImageView
+                    android:id="@+id/back_icon"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:padding="@dimen/px_10.0_dp"
+                    android:src="@drawable/ic_back"></ImageView>
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/heading_text"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_weight=".70"
+                android:gravity="center"
+                android:fontFamily="@font/semibold"
+                android:text="LOVE CALCULATOR"
+                android:textColor="@android:color/holo_orange_light"
+                android:textSize="@dimen/px_23.0_dp">
+
+
+            </TextView>
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_weight=".15"
+                android:gravity="center">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:padding="@dimen/px_10.0_dp"
+                    android:src="@drawable/ic_love" />
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/px_2.0_dp"
+            android:background="@color/black"
+            />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone"
+            android:id="@+id/calculate_lyt"
+            android:weightSum="1"
+            android:orientation="vertical">
+            <LinearLayout
+                android:visibility="visible"
+                android:layout_width="match_parent"
+                android:paddingTop="@dimen/px_10.0_dp"
+                android:layout_height="@dimen/px_120.0_dp"
+                android:background="@android:color/holo_orange_light"
+                android:orientation="vertical">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/px_40.0_dp"
+                    android:text="Your name"
+                    android:layout_gravity="start|center"
+                    android:gravity="center|start"
+                    android:textSize="@dimen/_20sdp"
+                    android:layout_marginHorizontal="@dimen/px_20.0_dp"
+                    android:textColor="@android:color/holo_red_dark"
+                    android:fontFamily="@font/semibold" />
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    app:cardBackgroundColor="@android:color/secondary_text_light"
+                    android:layout_marginVertical="@dimen/px_10.0_dp"
+                    android:layout_marginHorizontal="@dimen/px_10.0_dp"
+                    android:layout_height="@dimen/px_60.0_dp"
+                    app:cardCornerRadius="@dimen/px_15.0_dp">
+
+
+
+                    <EditText
+                        android:id="@+id/first_name"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/px_60.0_dp"
+                        android:textSize="@dimen/_18sdp"
+                        android:background="@android:color/transparent"
+                        android:textColor="@android:color/holo_orange_dark"
+                        android:singleLine="true"
+                        android:textColorHint="@android:color/holo_orange_dark"
+                        android:fontFamily="@font/semibold"
+                        android:hint="Full name"
+                        android:paddingHorizontal="@dimen/px_15.0_dp"
+                        />
+
+                </androidx.cardview.widget.CardView>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:weightSum="1"
+                android:orientation="vertical">
+                <LinearLayout
+                    android:visibility="visible"
+                    android:paddingTop="@dimen/px_10.0_dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/px_130.0_dp"
+                    android:background="@android:color/holo_orange_light"
+
+                    android:orientation="vertical">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/px_40.0_dp"
+                        android:text="Your crush"
+                        android:layout_gravity="start|center"
+                        android:gravity="center|start"
+                        android:textSize="@dimen/_20sdp"
+                        android:layout_marginHorizontal="@dimen/px_20.0_dp"
+                        android:textColor="@android:color/holo_red_dark"
+                        android:fontFamily="@font/semibold" />
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="match_parent"
+                        app:cardBackgroundColor="@android:color/secondary_text_light"
+                        android:layout_marginVertical="@dimen/px_10.0_dp"
+                        android:layout_marginHorizontal="@dimen/px_10.0_dp"
+                        android:layout_height="@dimen/px_60.0_dp"
+                        app:cardCornerRadius="@dimen/px_15.0_dp">
+
+                        <EditText
+                            android:id="@+id/second_name"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:textSize="@dimen/_18sdp"
+                            android:background="@android:color/transparent"
+                            android:textColor="@android:color/holo_orange_dark"
+                            android:singleLine="true"
+                            android:textColorHint="@android:color/holo_orange_dark"
+                            android:fontFamily="@font/semibold"
+                            android:hint="Full name"
+                            android:paddingHorizontal="@dimen/px_15.0_dp"
+                            />
+
+                    </androidx.cardview.widget.CardView>
+
+                </LinearLayout>
+                <LinearLayout
+                    android:visibility="visible"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/px_60.0_dp"
+                    android:layout_margin="@dimen/px_20.0_dp"
+                    android:background="@android:color/holo_orange_light"
+                    android:orientation="vertical">
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_marginVertical="@dimen/px_10.0_dp"
+                        app:cardBackgroundColor="@android:color/secondary_text_light"
+                        android:layout_gravity="center"
+                        android:layout_marginHorizontal="@dimen/px_55.0_dp"
+                        android:layout_height="match_parent"
+                        app:cardCornerRadius="@dimen/px_5.0_dp">
+
+                        <Button
+                            android:id="@+id/okay"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:textSize="@dimen/_18sdp"
+                            android:background="@android:color/transparent"
+                            android:textColor="@android:color/holo_orange_dark"
+                            android:singleLine="true"
+                            android:fontFamily="@font/semibold"
+                            android:text="Calculate love"
+                            android:paddingHorizontal="@dimen/px_15.0_dp"
+                            />
+
+                    </androidx.cardview.widget.CardView>
+
+                </LinearLayout>
+
+
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/px_330.0_dp"
+                    android:src="@android:color/transparent"
+                    android:id="@+id/love_pic"
+
+                    />
+
+
+        </LinearLayout>
+    </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/another_lyt"
+            android:visibility="visible"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/comment"
+                android:background="@drawable/insta_gradient_2"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/px_40.0_dp"
+                android:text=""
+                android:layout_gravity="start|center"
+                android:gravity="center"
+                android:textSize="@dimen/_16sdp"
+                android:paddingHorizontal="@dimen/px_20.0_dp"
+                android:textColor="@android:color/white"
+                android:fontFamily="@font/semibold" />
+
+
+            <LinearLayout
+                android:visibility="visible"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/px_80.0_dp"
+                android:layout_gravity="center"
+                android:background="@drawable/insta_gradient_2"
+                android:orientation="vertical">
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_marginVertical="@dimen/px_10.0_dp"
+                    app:cardBackgroundColor="@android:color/holo_red_dark"
+                    android:layout_gravity="center"
+                    android:layout_marginHorizontal="@dimen/px_30.0_dp"
+                    android:layout_height="match_parent"
+                    app:cardCornerRadius="@dimen/px_15.0_dp">
+
+                    <Button
+                        android:id="@+id/percent"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:textSize="@dimen/_25sdp"
+                        android:background="@android:color/transparent"
+                        android:textColor="@android:color/white"
+                        android:singleLine="true"
+                        android:fontFamily="@font/semibold"
+                        android:text="100 %"
+                        android:paddingHorizontal="@dimen/px_15.0_dp"
+                        />
+
+                </androidx.cardview.widget.CardView>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:visibility="visible"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/px_280.0_dp"
+                android:layout_gravity="center"
+                android:background="@drawable/insta_gradient_2"
+                android:orientation="vertical">
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_marginVertical="@dimen/px_10.0_dp"
+                    app:cardBackgroundColor="@android:color/holo_red_dark"
+                    android:layout_gravity="center"
+                    android:layout_marginHorizontal="@dimen/px_30.0_dp"
+                    android:layout_height="match_parent"
+                    app:cardCornerRadius="@dimen/px_15.0_dp">
+
+                    <ImageView
+                        android:id="@+id/gif_success"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@android:color/transparent"
+                        android:textColor="@android:color/white"
+                        android:singleLine="true"
+                        />
+
+                </androidx.cardview.widget.CardView>
+
+            </LinearLayout>
+            <LinearLayout
+                android:visibility="visible"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/px_60.0_dp"
+                android:layout_marginVertical="@dimen/px_10.0_dp"
+                android:layout_marginRight="@dimen/px_30.0_dp"
+                android:background="@drawable/insta_gradient_2"
+                android:orientation="vertical">
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_marginVertical="@dimen/px_10.0_dp"
+                    app:cardBackgroundColor="@android:color/secondary_text_light"
+                    android:layout_gravity="start"
+                    android:layout_marginRight="@dimen/px_35.0_dp"
+                    android:layout_height="match_parent"
+                    app:cardCornerRadius="@dimen/px_5.0_dp">
+
+                    <Button
+                        android:id="@+id/f_n_cal"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:textSize="@dimen/_14sdp"
+                        android:background="@android:color/transparent"
+                        android:textColor="@android:color/holo_orange_dark"
+                        android:singleLine="true"
+                        android:gravity="start|center"
+                        android:fontFamily="@font/semibold"
+                        android:text="Another Calculation"
+                        android:paddingHorizontal="@dimen/px_15.0_dp"
+                        />
+
+                </androidx.cardview.widget.CardView>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:visibility="visible"
+                android:layout_width="@dimen/px_160.0_dp"
+                android:layout_height="@dimen/px_60.0_dp"
+                android:layout_gravity="center"
+                android:background="@drawable/insta_gradient_2"
+                android:orientation="vertical">
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="@dimen/px_150.0_dp"
+                    android:layout_marginVertical="@dimen/px_5.0_dp"
+                    app:cardBackgroundColor="@android:color/secondary_text_light"
+                    android:layout_gravity="center"
+                    android:layout_marginHorizontal="@dimen/px_55.0_dp"
+                    android:layout_height="match_parent"
+                    app:cardCornerRadius="@dimen/px_5.0_dp">
+
+                    <Button
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:textSize="@dimen/_14sdp"
+                        android:background="@android:color/transparent"
+                        android:textColor="@android:color/holo_orange_dark"
+                        android:singleLine="true"
+                        android:fontFamily="@font/semibold"
+                        android:text="V/s"
+                        android:paddingHorizontal="@dimen/px_15.0_dp"
+                        />
+
+                </androidx.cardview.widget.CardView>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:visibility="visible"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/px_60.0_dp"
+                android:layout_marginVertical="@dimen/px_10.0_dp"
+                android:layout_marginLeft="@dimen/px_30.0_dp"
+                android:background="@drawable/insta_gradient_2"
+                android:orientation="vertical">
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_marginVertical="@dimen/px_10.0_dp"
+                    app:cardBackgroundColor="@android:color/secondary_text_light"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="@dimen/px_35.0_dp"
+                    android:layout_height="match_parent"
+                    app:cardCornerRadius="@dimen/px_5.0_dp">
+
+                    <Button
+                        android:id="@+id/second_r_name"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:textSize="@dimen/_14sdp"
+                        android:background="@android:color/transparent"
+                        android:textColor="@android:color/holo_orange_dark"
+                        android:singleLine="true"
+                        android:fontFamily="@font/semibold"
+                        android:text="Another Calculation"
+                        android:paddingHorizontal="@dimen/px_15.0_dp"
+                        />
+
+                </androidx.cardview.widget.CardView>
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:visibility="visible"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/px_60.0_dp"
+                android:layout_marginVertical="@dimen/px_5.0_dp"
+                android:layout_marginHorizontal="@dimen/px_20.0_dp"
+                android:orientation="vertical">
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_marginVertical="@dimen/px_10.0_dp"
+                    app:cardBackgroundColor="@android:color/secondary_text_light"
+                    android:layout_gravity="center"
+                    android:layout_marginHorizontal="@dimen/px_55.0_dp"
+                    android:layout_height="match_parent"
+                    app:cardCornerRadius="@dimen/px_5.0_dp">
+
+                    <Button
+                        android:id="@+id/another_cal"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:textSize="@dimen/_14sdp"
+                        android:background="@android:color/transparent"
+                        android:textColor="@android:color/holo_orange_dark"
+                        android:singleLine="true"
+                        android:fontFamily="@font/semibold"
+                        android:text="Another Calculation"
+                        android:paddingHorizontal="@dimen/px_15.0_dp"
+                        />
+
+                </androidx.cardview.widget.CardView>
+
+            </LinearLayout>
+
+        </LinearLayout>
+</LinearLayout>
+</androidx.core.widget.NestedScrollView>

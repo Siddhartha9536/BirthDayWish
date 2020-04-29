@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/gradient_1">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_margin="@dimen/px_20.0_dp"
+        android:orientation="vertical"
+
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:id="@+id/jai_ram"
+            android:visibility="gone"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/px_80.0_dp"
+            android:background="@drawable/rounder_ended_1">
+
+            <TextView
+                android:src="@drawable/imag3"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:fontFamily="@font/mazzardhbold"
+                android:gravity="center"
+                android:text="| |  JAI SHRI RAM  | |"
+                android:textSize="@dimen/px_22.0_dp"
+                android:textColor="@color/white" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/px_50.0_dp"/>
+
+        <LinearLayout
+            android:id="@+id/input_lyt"
+            android:visibility="gone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/rounder_ended_1"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_marginTop="@dimen/px_50.0_dp"
+                android:layout_height="@dimen/px_140.0_dp"
+                android:orientation="vertical"
+                android:weightSum="1"
+                android:paddingHorizontal="@dimen/px_20.0_dp"
+                android:paddingTop="@dimen/px_20.0_dp">
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/px_60.0_dp"
+                    android:text="Please Enter Your Name."
+                    android:gravity="center"
+                    android:textSize="@dimen/_16sdp"
+                    android:fontFamily="@font/mazzardh_regular"
+                    android:background="@android:color/transparent"
+                    android:textColor="@color/white"
+                    android:enabled="false" />
+
+                <EditText
+                    android:id="@+id/get_name"
+                    android:layout_width="match_parent"
+                    android:background="@drawable/rounder_ended_1"
+                    android:fontFamily="@font/mazzardh_regular"
+                    android:padding="@dimen/px_15.0_dp"
+                    android:singleLine="true"
+                    android:gravity="center"
+                    android:textSize="@dimen/_14sdp"
+                    android:layout_height="@dimen/px_50.0_dp"
+                    android:hint="Name please"
+                    android:textColor="@color/white"
+                    android:textColorHint="@color/gray_text" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/px_150.0_dp"
+                android:paddingHorizontal="@dimen/px_20.0_dp"
+                android:paddingTop="@dimen/px_20.0_dp"
+                android:padding="@dimen/px_20.0_dp"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:elevation="@dimen/px_20.0_dp">
+
+                <Button
+                    android:id="@+id/btn_next"
+                    android:layout_width="@dimen/px_200.0_dp"
+                    android:background="@drawable/rounder_ended_2"
+                    android:fontFamily="@font/mazzardhbold"
+                    android:gravity="center"
+                    android:layout_height="@dimen/px_50.0_dp"
+                    android:text="Next"
+                    android:textSize="@dimen/px_20.0_dp"
+                    android:textColor="@color/white"
+                    android:textColorHint="@color/gray_text" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/px_50.0_dp"/>
+        <LinearLayout
+            android:visibility="gone"
+            android:id="@+id/show_quote_lyt"
+            android:layout_width="match_parent"
+            android:layout_marginTop="@dimen/px_20.0_dp"
+            android:background="@drawable/rounder_ended_1"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:layout_height="@dimen/px_200.0_dp">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/px_100.0_dp"
+                android:textSize="@dimen/_15sdp"
+                android:gravity="center"
+                android:layout_gravity="center"
+                android:fontFamily="@font/mazzardh_regular"
+                android:paddingHorizontal="@dimen/px_15.0_dp"
+                android:paddingBottom="@dimen/px_20.0_dp"
+                android:text="@string/life_quote" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/px_50.0_dp"
+                android:textSize="@dimen/_10sdp"
+                android:gravity="end"
+                android:layout_gravity="center"
+                android:fontFamily="@font/semibold"
+                android:paddingHorizontal="@dimen/px_15.0_dp"
+                android:paddingBottom="@dimen/px_20.0_dp"
+                android:text="Developed by: Siddhartha" />
+
+        </LinearLayout>
+
+
+
+    </LinearLayout>
+
+
+</androidx.core.widget.NestedScrollView>

@@ -1,0 +1,127 @@
+<resources>
+    <string name="app_name">Family Pics</string>
+    <string name="news_header">LIVE NEWS</string>
+    <string name="family_items">POPULAR THINGS</string>
+    <string name="appbar_scrolling_view_behavior" translatable="false">com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior</string>
+
+    <string name="state_name">State name:</string>
+    <string name="country_name">Name:</string>
+    <string name="time">Time:</string>
+    <string name="day">Date:</string>
+    <string name="confirmed">Confirmed:</string>
+    <string name="new_cases">New:</string>
+    <string name="recovered">Recovered:</string>
+    <string name="critical_cases">Critical:</string>
+
+    <string name="active">Active:</string>
+    <string name="active_cases">Active:</string>
+    <string name="deaths">Deaths:</string>
+    <string name="total_cases">Total:</string>
+    <string name="recovered_cases">Recovered:</string>
+    <string name="new_deaths">New:</string>
+    <string name="total_tests">Total:</string>
+    <string name="total_deaths">Total:</string>
+
+    <string name="about_me">About Me</string>
+    <string name="angry">Angry</string>
+
+    <string name="bubble_feeling">Bubble Feelings</string>
+    <string name="bud_list">Bud List</string>
+    <string name="bubble_world">Bubble World</string>
+    <string name="bubbles_feeling_happy">Happy Bubble</string>
+    <string name="bubbles_feeling_angry">Angry Bubble</string>
+    <string name="bubbles_feeling_sad">Sad Bubble</string>
+
+    <string name="create_account">Create Account</string>
+    <string name="camera">Camera</string>
+    <string name="choose_another">Choose Another One</string>
+    <string name="create_post">Create Post</string>
+
+    <string name="dont_have_account">Don\'t have an account? </string>
+    <string name="drawer_open">Drawer Open</string>
+    <string name="drawer_close">Drawer Closed</string>
+
+    <string name="edit_profile">Edit Profile</string>
+    <string name="edit">Edit</string>
+    <string name="enter_mobile_no">Enter Mobile Number</string>
+    <string name="employees">Employees</string>
+    <string name="enter_email">Enter Email Address</string>
+
+    <string name="friends">Friends</string>
+    <string name="family">Family</string>
+    <string name="female">Female</string>
+
+    <string name="gallery">Gallery</string>
+
+    <string name="hint_first_name">First Name</string>
+    <string name="hint_confirm_password">Confirm Password</string>
+    <string name="hint_date">Date of Birth</string>
+    <string name="hint_email">Email</string>
+    <string name="hint_gender">Select Gender</string>
+    <string name="hint_last_name">Last Name</string>
+    <string name="hint_mobile_no">Mobile Number </string>
+    <string name="hint_password">Password</string>
+    <string name="hows_your_feeling">Mama Ji and Guddu</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="happy">Happy</string>
+    <string name="hint_enter_date_birth">Enter Date of Birth</string>
+    <string name="hint_choose_gender">Choose Gender</string>
+    <string name="hint_relationship">Relationship_status</string>
+    <string name="healthcare">Healthcare</string>
+    <string name="hint_gender_text">Gender</string>
+    <string name="hint_relationship_choose">Select Status</string>
+    <string name="hint_enter_last_name">Enter Last Name</string>
+    <string name="hint_enter_first">Enter First Name</string>
+    <string name="hint_about_me">About Me</string>
+
+    <string name="login_text">Share your thoughts with blog,posts, show \n your skill, allot activities and enjoy!  </string>
+    <string name="logout">Logout</string>
+
+    <string name="my_profile">My Profile</string>
+    <string name="messages">Messages</string>
+    <string name="male">Male</string>
+
+    <string name="next">Next</string>
+
+    <string name="post">Post</string>
+    <string name="profile">Profile</string>
+    <string name="personal_info">Personal Info</string>
+
+
+    <string name="rs_single">Single</string>s
+    <string name="rs_relationship">In a relationship</string>
+    <string name="rs_complicated">Complicated</string>
+
+    <string name="settings">Settings</string>
+    <string name="share">Share</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="sign_in">Sign In</string>
+    <string name="sign_up_text_message">Oops seems like you \ndon\'t have a registered \nmobile number.You can \nregister here!!!  </string>
+    <string name="sad">Sad</string>
+    <string name="save">Save</string>
+    <string name="select_rs">Please Select Relationship Status</string>
+    <string name="select_gender">Please Select Gender</string>
+    <string name="select_image">Select Image From</string>
+
+    <string name="tell_me_about_myself">Tell Us About Yourself</string>
+    <string name="select_group">Select Group</string>
+    <string name="select">Select</string>
+    <string name="choose_group">Choose group who can reach to your post?</string>
+    <string name="group_message">Your post will be visible in News Feed,on your profile and also accessible to one of following selected group.</string>
+    <string name="group_list_meesage">The post wiil be visible according the bud you added on the list and you can add or delete bud and get access to your group member post.</string>
+    <string name="feeling_message">Your feeling wiil be visible in News Feed,on your profile and also accessible to one of following selected group.</string>
+
+    <string name="select_feeling">Select Feeling</string>
+    <string name="select_feeling_now">Select your feeling that you experiencing right now</string>
+
+    <string name="update_profile_image">Update Profile Image</string>
+    <string name="siddhartha_tyagi">Siddhartha Tyagi</string>
+    <string name="life_quote">A beauTiful Dress Can Change the perSonality But,Beautiful Behavior can change the Life!!</string>
+    <string name="dummy_text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industries standard dummy text ever since the 1500s, when an unknownprinter took a galley of type and scrambled it to make a type specimen book. It has survivednot only five centuries, but also the leap into electronic typesetting, remaining essentiallyunchanged. It was popularised in the 1960s with the release of Letraset sheets containing LoremIpsum passages, and more recently with desktop publishing software like Aldus PageMaker includingversions of Lorem Ipsum.Why do we use it?It is a long established fact that a reader will be distracted by the readable content of a page whenlooking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distributionof letters, as opposed to using Content here, content here, making it look like readable English.Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text,and a search for lorem ipsum will uncover many web sites still in their infancy. Various versions haveevolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).</string>
+
+
+    <string name="host">x-rapidapi-host</string>
+    <string name="key">x-rapidapi-key</string>
+
+
+</resources>

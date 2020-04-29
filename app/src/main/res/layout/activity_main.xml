@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:weightSum="1"
+        android:id="@+id/toolbar"
+        android:layout_height="@dimen/px_56.0_dp">
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:id="@+id/nav_button"
+            android:layout_weight=".2">
+
+            <ImageView
+                android:layout_width="@dimen/px_50.0_dp"
+                android:id="@+id/nav_icon"
+                android:layout_gravity="center"
+                android:layout_height="@dimen/px_20.0_dp"
+                android:src="@drawable/ic_menu_icon">
+
+            </ImageView>
+
+
+        </LinearLayout>
+        <View
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight=".6">
+
+        </View>
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:layout_weight=".2">
+            <ImageView
+                android:layout_width="@dimen/px_50.0_dp"
+                android:layout_gravity="center"
+                android:id="@+id/category_open"
+                android:layout_height="@dimen/px_50.0_dp"
+                android:src="@drawable/ic_profile_circle">
+
+            </ImageView>
+
+
+        </LinearLayout>
+
+    </LinearLayout>
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:fillViewport="true">
+
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/px_60.0_dp"
+                android:orientation="vertical">
+
+
+
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/px_60.0_dp"
+                    android:gravity="center"
+                    android:fontFamily="@font/bold"
+                    android:textSize="@dimen/px_30_sp"
+                    android:text="HAPPY BIRTHDAY"
+                    android:textColor="@color/blue_dark"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:orientation="horizontal"
+                android:layout_marginTop="-20dp"
+                android:layout_height="@dimen/px_120.0_dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:orientation="horizontal"
+                    android:background="@drawable/edit_background_home"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:gravity="center"
+                        android:textColor="@color/white"
+                        android:id="@+id/how_feeling_text"
+                        android:textSize="@dimen/px_25.0_dp"
+                        android:text="@string/hows_your_feeling"
+                        android:layout_height="match_parent">
+
+
+                    </TextView>
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/px_70.0_dp"
+                android:orientation="vertical">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="-10dp"
+                    android:weightSum="1">
+                    <View
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight=".1"></View>
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:gravity="center|start"
+                        android:textSize="@dimen/px_30.0_dp"
+                        android:textColor="@color/hello_text"
+                        android:id="@+id/feed_text"
+                        android:text="PHOTO's"
+                        android:layout_weight=".85">
+
+                    </TextView>
+                </LinearLayout>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:background="@drawable/edit_background_square"
+                android:layout_marginTop="-48dp"
+                android:orientation="vertical"
+                android:weightSum="1"
+                android:layout_height="@dimen/px_290.0_dp">
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight=".16"></View>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:orientation="horizontal"
+                    android:weightSum="1"
+                    android:layout_weight=".67">
+                    <View
+                        android:layout_width="0dp"
+                        android:layout_weight=".12"
+                        android:layout_height="match_parent"/>
+                    <ImageView
+                        android:layout_width="0dp"
+                        android:layout_weight=".76"
+                        android:layout_gravity="center"
+                        android:scaleType="fitXY"
+                        android:id="@+id/base_image"
+                        android:layout_height="@dimen/px_200.0_dp"
+                        android:src="@drawable/ic_launcher_background">
+
+                    </ImageView>
+                    <View
+                        android:layout_width="0dp"
+                        android:layout_weight=".12"
+                        android:layout_height="match_parent"/>
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/horizontal_recyclerview"
+                android:layout_marginTop="@dimen/px_15.0_dp"
+                android:layout_marginLeft="@dimen/px_4.5_dp"
+                android:paddingLeft="@dimen/px_30.0_dp"
+                android:clipToPadding="false"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/vertical_recyclerview"
+                android:layout_marginTop="@dimen/px_15.0_dp"
+                android:layout_gravity="center"
+                android:layout_marginLeft="@dimen/px_4.5_dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/vertical_recyclerview_real"
+                android:layout_marginTop="@dimen/px_15.0_dp"
+                android:layout_gravity="center"
+                android:layout_marginLeft="@dimen/px_4.5_dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/px_80.0_dp"></View>
+
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+</LinearLayout>

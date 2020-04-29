@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#D84315</color>
+    <color name="colorPrimaryDark">#00574B</color>
+    <color name="colorAccent">#5773ff</color>
+    <color name="login_color">#fbfbfe</color>
+    <color name="blue_color">#4d6bff</color>
+    <color name="gray_text">#cccccc</color>
+    <color name="gray_dark">#515a6d</color>
+    <color name="green_color_button">#4ad087</color>
+    <color name="white">#ffffff</color>
+    <color name="black">#000000</color>
+    <color name="purple_light">#665eff</color>
+    <color name="blue_dark">#5773ff</color>
+    <color name="sky_blue">#3497fd</color>
+    <color name="blue_light">#3acce1</color>
+    <color name="user_text_color">#f5f6f7</color>
+    <color name="user_email_color">#636a7b</color>
+    <color name="hello_text">#1a1a1a</color>
+    <color name="colorOverlay">#78ffffff</color>
+
+
+    <color name="color1">#9C27B0</color>
+    <color name="color2">#FF4081</color>
+    <color name="color3">#7B1FA2</color>
+    <color name="color4">#F8BBD0</color>
+    <color name="color5">#FF5252</color>
+    <color name="color6">#607D8B</color>
+    <color name="color7">#FF5722</color>
+    <color name="color8">#FFA000</color>
+
+    <color name="overlay_dark_40">#66000000</color>
+    <color name="pink_300">#F06292</color>
+
+    <color name="grey_3">#f7f7f7</color>
+    <color name="grey_5">#f2f2f2</color>
+    <color name="grey_10">#e6e6e6</color>
+    <color name="grey_20">#cccccc</color>
+    <color name="grey_40">#999999</color>
+    <color name="grey_60">#666666</color>
+    <color name="grey_80">#37474F</color>
+    <color name="grey_90">#263238</color>
+    <color name="grey_95">#1a1a1a</color>
+    <color name="grey_100_">#0d0d0d</color>
+
+</resources>

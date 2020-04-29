@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:background="@drawable/rounder_ended_all_2_bottom_round">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/px_60.0_dp"
+            android:orientation="horizontal"
+            android:background="@android:color/holo_red_dark"
+            android:weightSum="1">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_weight=".20"
+                android:gravity="center">
+
+                <ImageView
+                    android:id="@+id/back_icon"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:padding="@dimen/px_10.0_dp"
+                    android:src="@drawable/ic_family_home"></ImageView>
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/heading_text"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_weight=".80"
+                android:gravity="center"
+                android:fontFamily="@font/semibold"
+                android:text="HAPPY FAMILY"
+                android:textColor="@android:color/holo_orange_light"
+                android:textSize="@dimen/px_23.0_dp">
+
+
+            </TextView>
+<!--            <LinearLayout-->
+<!--                android:layout_width="0dp"-->
+<!--                android:layout_height="match_parent"-->
+<!--                android:layout_gravity="center"-->
+<!--                android:layout_weight=".15"-->
+<!--                android:gravity="center">-->
+
+<!--&lt;!&ndash;                <de.hdodenhof.circleimageview.CircleImageView&ndash;&gt;-->
+<!--&lt;!&ndash;                    android:layout_width="match_parent"&ndash;&gt;-->
+<!--&lt;!&ndash;                    android:layout_height="match_parent"&ndash;&gt;-->
+<!--&lt;!&ndash;                    android:padding="@dimen/px_10.0_dp"&ndash;&gt;-->
+<!--&lt;!&ndash;                    android:src="@drawable/ic_logout_blue" />&ndash;&gt;-->
+
+<!--            </LinearLayout>-->
+
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/px_2.0_dp"
+            android:background="@color/black" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:weightSum="1">
+
+            <androidx.core.widget.NestedScrollView
+                android:id="@+id/nested_scroll_view"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:clipToPadding="false"
+                android:fillViewport="true"
+                android:scrollbars="none"
+                android:scrollingCache="true"
+                app:layout_behavior="@string/app_name">
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:id="@+id/lyt_parent"
+                        android:layout_height="wrap_content"
+                        android:focusableInTouchMode="true"
+                        android:orientation="vertical">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <ImageView
+                                android:layout_width="match_parent"
+                                android:layout_height="@dimen/px_250.0_dp"
+                                android:scaleType="centerCrop"
+                                android:src="@drawable/imag3" />
+
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="@dimen/px_250.0_dp"
+                                android:background="@color/overlay_dark_40" />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/px_150.0_dp"
+                                android:paddingHorizontal="@dimen/px_10.0_dp"
+                                android:text="Family is not an Important thing, It is Everything"
+                                android:textSize="@dimen/_20sdp"
+                                android:textColor="@android:color/white"
+                                android:fontFamily="@font/mazzardh_regular"
+                                android:gravity="center" />
+
+                        </RelativeLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/px_200.0_dp"
+                            android:layout_marginTop="-30dp"
+                            android:orientation="vertical">
+
+                            <androidx.cardview.widget.CardView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                app:cardCornerRadius="@dimen/px_15.0_dp"
+                                android:layout_marginHorizontal="@dimen/px_10.0_dp"
+                                android:elevation="@dimen/px_5.0_dp">
+
+                                <ImageView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:fitsSystemWindows="true"
+                                    android:scaleType="fitXY"
+                                    android:src="@drawable/img_family_tree" />
+
+<!--                                <TextView-->
+<!--                                    android:layout_width="wrap_content"-->
+<!--                                    android:layout_height="wrap_content"-->
+<!--                                    android:layout_gravity="center"-->
+<!--                                    android:fontFamily="@font/semibold"-->
+<!--                                    android:textSize="@dimen/_25sdp"-->
+<!--                                    android:textColor="@color/black"-->
+<!--                                    android:text="@string/family_items"-->
+<!--                                    android:gravity="center" />-->
+
+                            </androidx.cardview.widget.CardView>
+
+
+                        </LinearLayout>
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/recyclerView"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginTop="-50dp"
+                            android:paddingLeft="@dimen/px_10.0_dp"
+                            android:paddingRight="@dimen/px_10.0_dp"
+                            android:scrollbars="vertical"
+                            android:scrollingCache="true" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/px_200.0_dp"
+                            android:orientation="vertical">
+
+                            <androidx.cardview.widget.CardView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                app:cardCornerRadius="@dimen/px_15.0_dp"
+                                android:layout_marginHorizontal="@dimen/px_10.0_dp"
+                                android:elevation="@dimen/px_5.0_dp"
+                                app:cardBackgroundColor="@color/pink_300">
+
+                                <ImageView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:fitsSystemWindows="true"
+                                    android:scaleType="fitXY"
+                                    android:src="@drawable/live_news" />
+
+<!--                                <TextView-->
+<!--                                    android:layout_width="match_parent"-->
+<!--                                    android:layout_height="match_parent"-->
+<!--                                    android:fontFamily="@font/semibold"-->
+<!--                                    android:textSize="@dimen/_25sdp"-->
+<!--                                    android:textColor="@color/white"-->
+<!--                                    android:text="@string/news_header"-->
+<!--                                    android:gravity="center" />-->
+
+                            </androidx.cardview.widget.CardView>
+
+
+                        </LinearLayout>
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/news_section"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginTop="-50dp"
+                            android:paddingLeft="@dimen/px_10.0_dp"
+                            android:paddingRight="@dimen/px_10.0_dp"
+                            android:scrollbars="vertical"
+                            android:scrollingCache="true" />
+
+                    </LinearLayout>
+                    <LinearLayout
+                        android:id="@+id/lyt_progress"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:layout_gravity="center"
+                        android:layout_centerInParent="true"
+                        android:layout_margin="@dimen/px_15.0_dp"
+                        android:orientation="vertical">
+
+                        <com.images.widgets.ViewLoadingDotsBounce
+                            android:layout_width="50dp"
+                            android:layout_height="40dp"
+                            android:background="@color/pink_300" />
+
+                    </LinearLayout>
+                </FrameLayout>
+
+
+            </androidx.core.widget.NestedScrollView>
+
+        </LinearLayout>
+</LinearLayout>

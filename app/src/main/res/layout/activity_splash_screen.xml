@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    tools:context="com.images.SplashScreenActivity">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+
+            <ImageView
+                android:id="@+id/splash_screen"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight=".4"
+                android:scaleType="fitXY"
+                android:src="@android:color/transparent" />
+
+            <ImageView
+                android:id="@+id/splash_screen_1"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight=".6"
+                android:scaleType="fitXY"
+                android:src="@android:color/transparent" />
+
+
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/jai_ram"
+            android:visibility="visible"
+            android:layout_width="match_parent"
+            android:layout_gravity="center"
+            android:layout_marginBottom="@dimen/px_80.0_dp"
+            android:layout_marginHorizontal="@dimen/px_20.0_dp"
+            android:layout_height="@dimen/px_60.0_dp"
+            android:background="@drawable/rounder_ended_1">
+
+            <TextView
+                android:src="@drawable/imag3"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:fontFamily="@font/mazzardhbold"
+                android:gravity="center"
+                android:text="| |  JAI SHRI RAM  | |"
+                android:textSize="@dimen/px_22.0_dp"
+                android:textColor="@color/white" />
+        </LinearLayout>
+    </FrameLayout>
+
+
+
+</LinearLayout>

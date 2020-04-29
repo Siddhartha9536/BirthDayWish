@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="@dimen/px_150.0_dp"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/px_5.0_dp"
+    android:background="@android:color/transparent">
+
+    <LinearLayout
+        android:layout_width="@dimen/px_150.0_dp"
+        android:layout_height="@dimen/px_150.0_dp">
+
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:layout_width="@dimen/px_150.0_dp"
+                android:src="@color/color1"
+                android:background="@android:color/transparent"
+                android:layout_height="@dimen/px_150.0_dp"/>
+
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:layout_width="@dimen/px_150.0_dp"
+                android:padding="@dimen/px_2.0_dp"
+                android:src="@color/color5"
+                android:background="@android:color/transparent"
+                android:layout_height="@dimen/px_150.0_dp"/>
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:layout_width="@dimen/px_150.0_dp"
+                android:padding="@dimen/px_4.0_dp"
+                android:src="@android:color/holo_red_dark"
+                android:background="@android:color/transparent"
+                android:layout_height="@dimen/px_150.0_dp"/>
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:layout_width="@dimen/px_150.0_dp"
+                android:id="@+id/user_image"
+                android:padding="@dimen/px_6.0_dp"
+                android:src="@android:color/transparent"
+                android:background="@android:color/transparent"
+                android:layout_height="@dimen/px_150.0_dp"/>
+
+
+
+        </FrameLayout>
+
+
+
+    </LinearLayout>
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="@dimen/px_5.0_dp"
+        android:layout_gravity="center"
+        android:weightSum="1"
+        android:orientation="horizontal"
+        android:background="@drawable/round_shape">
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:layout_width="0dp"
+            android:padding="@dimen/px_5.0_dp"
+            android:layout_weight=".15"
+            android:layout_height="@dimen/px_20.0_dp"
+            android:src="@android:color/white" />
+
+        <TextView
+            android:id="@+id/names"
+            android:layout_weight=".85"
+            android:layout_width="0dp"
+            android:gravity="center"
+            android:paddingRight="@dimen/px_2.0_dp"
+            android:layout_height="match_parent"
+            android:textColor="@color/white"
+            android:textSize="@dimen/px_14_sp"
+            android:fontFamily="@font/semibold"
+            android:text="Siddhartha Tyagi" />
+    </LinearLayout>
+
+
+
+<!--<LinearLayout-->
+<!--    android:layout_width="@dimen/px_180.0_dp"-->
+<!--    android:layout_height="wrap_content"-->
+<!--    android:orientation="horizontal"-->
+<!--    android:weightSum="1"-->
+<!--    android:layout_marginBottom="@dimen/px_4.5_dp"-->
+<!--    android:layout_marginTop="@dimen/px_4.5_dp">-->
+<!--    <LinearLayout-->
+<!--        android:layout_width="0dp"-->
+<!--        android:layout_gravity="center"-->
+<!--        android:gravity="center"-->
+<!--        android:layout_height="@dimen/px_35.0_dp"-->
+<!--        android:layout_weight=".25">-->
+<!--        <ImageView-->
+<!--            android:layout_width="@dimen/px_35.0_dp"-->
+<!--            android:layout_height="@dimen/px_35.0_dp"-->
+<!--            android:src="@drawable/ic_launcher_foreground"-->
+<!--            android:padding="@dimen/px_4.5_dp"-->
+<!--            android:background="@color/black"-->
+
+
+<!--            android:id="@+id/profile_image">-->
+
+<!--        </ImageView>-->
+<!--    </LinearLayout>-->
+<!--    <View-->
+<!--        android:layout_width="0dp"-->
+<!--        android:layout_height="match_parent"-->
+<!--        android:layout_weight=".03">-->
+
+<!--    </View>-->
+<!--    <TextView-->
+<!--        android:layout_width="0dp"-->
+<!--        android:layout_height="match_parent"-->
+<!--        android:layout_gravity="center"-->
+<!--        android:gravity="center|start"-->
+<!--        android:textColor="#2c2c2c"-->
+<!--        android:id="@+id/user_name"-->
+<!--        android:text="James Bruno"-->
+<!--        android:textSize="@dimen/px_13.0_dp"-->
+<!--        android:layout_weight=".7">-->
+
+<!--    </TextView>-->
+
+
+<!--</LinearLayout>-->
+
+
+</LinearLayout>

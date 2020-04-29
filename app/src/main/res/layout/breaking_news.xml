@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="@dimen/px_250.0_dp"
+    android:layout_height="@dimen/px_250.0_dp"
+    app:cardBackgroundColor="@android:color/holo_red_dark"
+    app:cardCornerRadius="@dimen/px_25.0_dp"
+    app:cardElevation="@dimen/px_5.0_dp">
+
+    <com.balysv.materialripple.MaterialRippleLayout
+        style="@style/RippleStyleBlack"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:id="@+id/lyt_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:padding="@dimen/px_10.0_dp">
+
+                <ImageView
+                    android:id="@+id/image"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/px_120.0_dp"
+                    android:src="@drawable/ic_news" />
+
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:clickable="true"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:padding="@dimen/px_15.0_dp">
+
+
+
+                <TextView
+                    android:id="@+id/title"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/px_40.0_dp"
+                    android:gravity="center"
+                    android:textSize="@dimen/_18sdp"
+                    android:layout_marginTop="@dimen/px_5.0_dp"
+                    android:text="Category Name"
+                    android:fontFamily="@font/semibold"
+                    android:textColor="@color/white" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/px_40.0_dp"
+                    android:orientation="horizontal"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:weightSum="1">
+                    <TextView
+                        android:layout_width="wrap_content"
+
+                        android:layout_height="@dimen/px_40.0_dp"
+                        android:layout_marginTop="@dimen/px_5.0_dp"
+                        android:fontFamily="@font/semibold"
+                        android:gravity="center"
+                        android:text="Template: "
+                        android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/_15sdp" />
+                    <TextView
+                        android:id="@+id/title_template"
+                        android:layout_width="wrap_content"
+                        android:singleLine="true"
+                        android:layout_height="@dimen/px_40.0_dp"
+                        android:layout_marginTop="@dimen/px_5.0_dp"
+                        android:fontFamily="@font/semibold"
+                        android:gravity="center"
+                        android:text=""
+                        android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/_15sdp" />
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+
+
+        </LinearLayout>
+
+    </com.balysv.materialripple.MaterialRippleLayout>
+
+</androidx.cardview.widget.CardView>

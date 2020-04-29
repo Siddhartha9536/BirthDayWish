@@ -1,0 +1,253 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/rounder_ended_all_2_bottom_round">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:weightSum="1">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/px_60.0_dp"
+            android:orientation="horizontal"
+            android:background="@android:color/holo_red_dark"
+            android:weightSum="1">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_weight=".15"
+                android:gravity="center">
+
+                <ImageView
+                    android:id="@+id/back_icon"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:padding="@dimen/px_10.0_dp"
+                    android:src="@drawable/ic_menu"></ImageView>
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/heading_text"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_weight=".70"
+                android:gravity="center"
+                android:fontFamily="@font/semibold"
+                android:text="HAPPY FAMILY"
+                android:textColor="@android:color/holo_orange_light"
+                android:textSize="@dimen/px_23.0_dp">
+
+
+            </TextView>
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_weight=".15"
+                android:gravity="center">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:padding="@dimen/px_10.0_dp"
+                    android:src="@drawable/ic_family" />
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/px_2.0_dp"
+            android:background="@color/black" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:weightSum="1">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_margin="@dimen/px_20.0_dp"
+            android:orientation="vertical"
+            android:layout_height="wrap_content">
+            <LinearLayout
+                android:id="@+id/logout_lyt"
+                android:visibility="visible"
+                android:layout_width="match_parent"
+                android:layout_margin="@dimen/px_5.0_dp"
+                android:background="@drawable/rounder_ended_1"
+                android:layout_height="@dimen/px_50.0_dp"
+                android:orientation="horizontal"
+                android:layout_gravity="right"
+                android:gravity="right"
+                android:paddingHorizontal="@dimen/px_15.0_dp"
+                android:paddingTop="@dimen/px_10.0_dp">
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:id="@+id/logout"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:textColor="@color/white"
+                        android:padding="@dimen/px_5.0_dp"
+                        android:textSize="@dimen/px_18_sp"
+                        android:layout_gravity="right|center"
+                        android:layout_marginRight="@dimen/px_55.0_dp"
+                        android:fontFamily="@font/bicyclettebold"
+                        android:gravity="center|right"
+                        android:text="LOGOUT" />
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginBottom="@dimen/px_2.0_dp"
+                        android:layout_gravity="right|center"
+                        android:src="@drawable/ic_logout_64" />
+
+                </FrameLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/covid_world_lyt"
+                android:visibility="visible"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/px_60.0_dp"
+                android:background="@drawable/rounder_ended_1">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/px_70.0_dp"
+                    android:weightSum="1"
+                    android:layout_gravity="center"
+                    android:gravity="center|start"
+                    android:layout_marginHorizontal="@dimen/px_10.0_dp"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:padding="@dimen/px_10.0_dp"
+                        android:layout_height="match_parent"
+                        android:src="@drawable/ic_cv_48" />
+
+
+                    <TextView
+                        android:src="@drawable/imag3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:fontFamily="@font/semibold"
+                        android:gravity="center|start"
+                        android:text="| |  COVID - 19  WORLD | |"
+                        android:textSize="@dimen/px_22.0_dp"
+                        android:textColor="@color/white" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/covid_lyt"
+                android:visibility="visible"
+                android:layout_marginTop="@dimen/px_20.0_dp"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/px_60.0_dp"
+                android:background="@drawable/rounder_ended_1">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/px_60.0_dp"
+                    android:weightSum="1"
+                    android:layout_gravity="center"
+                    android:gravity="center|start"
+                    android:layout_marginHorizontal="@dimen/px_10.0_dp"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:padding="@dimen/px_10.0_dp"
+                        android:layout_height="match_parent"
+                        android:src="@drawable/ic_cv_48" />
+
+
+                    <TextView
+                        android:src="@drawable/imag3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:fontFamily="@font/semibold"
+                        android:gravity="center|start"
+                        android:text="| |  COVID - 19  INDIA | |"
+                        android:textSize="@dimen/px_22.0_dp"
+                        android:textColor="@color/white" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/images_lyt"
+                android:visibility="visible"
+                android:layout_marginTop="@dimen/px_20.0_dp"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/px_60.0_dp"
+                android:background="@drawable/rounder_ended_1">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/px_60.0_dp"
+                    android:weightSum="1"
+                    android:layout_gravity="center"
+                    android:gravity="center|start"
+                    android:layout_marginHorizontal="@dimen/px_10.0_dp"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:padding="@dimen/px_10.0_dp"
+                        android:layout_height="match_parent"
+                        android:src="@drawable/ic_pic_48" />
+
+
+                    <TextView
+                        android:src="@drawable/imag3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:fontFamily="@font/semibold"
+                        android:gravity="center|start"
+                        android:text="| |  IMAGES  | |"
+                        android:textSize="@dimen/px_22.0_dp"
+                        android:textColor="@color/white" />
+
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+            <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="LOVE"
+            android:id="@+id/love"
+
+            />
+
+        </LinearLayout>
+
+        </LinearLayout>
+    </LinearLayout>
+
+
+
+
+
+
+</LinearLayout>

@@ -1,0 +1,461 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <LinearLayout
+        android:id="@+id/covid_lyt"
+        android:visibility="visible"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_margin="@dimen/px_10.0_dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/rounder_ended_1">
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center|start"
+            android:gravity="center|start"
+            android:layout_marginVertical="@dimen/px_10.0_dp"
+            android:layout_marginHorizontal="@dimen/px_10.0_dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:background="@drawable/rounder_ended_all_2"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/px_30.0_dp"
+                android:text="Country Name "
+                android:gravity="center"
+                android:fontFamily="@font/semibold"
+                android:textSize="@dimen/px_18_sp"
+                android:paddingHorizontal="@dimen/px_5.0_dp"
+                android:textColor="@android:color/white"
+                android:layout_marginHorizontal="@dimen/px_10.0_dp"
+                android:layout_marginVertical="@dimen/px_4.0_dp" />
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="@dimen/px_110.0_dp"
+                    android:layout_height="wrap_content"
+                    android:text="Name:"
+                    android:fontFamily="@font/semibold"
+                    android:textSize="@dimen/px_18_sp"
+                    android:paddingHorizontal="@dimen/px_5.0_dp"
+                    android:textColor="@android:color/white"
+                    android:layout_marginHorizontal="@dimen/px_10.0_dp"
+                    android:layout_marginVertical="@dimen/px_4.0_dp" />
+
+                <TextView
+                    android:id="@+id/country_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:fontFamily="@font/semibold"
+                    android:textSize="@dimen/px_18_sp"
+                    android:paddingHorizontal="@dimen/px_5.0_dp"
+                    android:textColor="@android:color/white"
+
+                    android:layout_marginHorizontal="@dimen/px_10.0_dp"
+                    android:layout_marginVertical="@dimen/px_4.0_dp" />
+
+            </LinearLayout>
+
+            <TextView
+                android:background="@drawable/rounder_ended_all_2"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/px_30.0_dp"
+                android:text="Cases Stats"
+                android:gravity="center"
+                android:fontFamily="@font/semibold"
+                android:textSize="@dimen/px_18_sp"
+                android:paddingHorizontal="@dimen/px_5.0_dp"
+                android:textColor="@android:color/white"
+                android:layout_marginHorizontal="@dimen/px_10.0_dp"
+                android:layout_marginVertical="@dimen/px_4.0_dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="@dimen/px_110.0_dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/new_cases"
+                    android:fontFamily="@font/semibold"
+                    android:textSize="@dimen/px_14_sp"
+                    android:paddingHorizontal="@dimen/px_5.0_dp"
+                    android:textColor="@android:color/white"
+                    android:layout_marginHorizontal="@dimen/px_10.0_dp"
+                    android:layout_marginVertical="@dimen/px_4.0_dp" />
+
+                <TextView
+                    android:id="@+id/new_cases"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:fontFamily="@font/semibold"
+                    android:textSize="@dimen/px_14_sp"
+                    android:paddingHorizontal="@dimen/px_5.0_dp"
+                    android:textColor="@android:color/white"
+                    android:layout_marginHorizontal="@dimen/px_10.0_dp"
+                    android:layout_marginVertical="@dimen/px_4.0_dp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="visible"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="@dimen/px_110.0_dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/active_cases"
+                    android:fontFamily="@font/semibold"
+                    android:padding="@dimen/px_5.0_dp"
+                    android:textColor="@android:color/white"
+                    android:textSize="@dimen/px_14_sp"
+                    android:layout_marginHorizontal="@dimen/px_10.0_dp"
+                    android:layout_marginVertical="@dimen/px_4.0_dp" />
+
+                <TextView
+                    android:id="@+id/active_cases"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:fontFamily="@font/semibold"
+                    android:padding="@dimen/px_5.0_dp"
+                    android:textColor="@android:color/white"
+                    android:textSize="@dimen/px_14_sp"
+                    android:layout_marginHorizontal="@dimen/px_10.0_dp"
+                    android:layout_marginVertical="@dimen/px_4.0_dp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="@dimen/px_110.0_dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/critical_cases"
+                    android:fontFamily="@font/semibold"
+                    android:textSize="@dimen/px_14_sp"
+                    android:paddingHorizontal="@dimen/px_5.0_dp"
+                    android:textColor="@android:color/white"
+                    android:layout_marginHorizontal="@dimen/px_10.0_dp"
+                    android:layout_marginVertical="@dimen/px_4.0_dp" />
+
+                <TextView
+                    android:id="@+id/critical_cases"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:fontFamily="@font/semibold"
+                    android:textSize="@dimen/px_14_sp"
+                    android:paddingHorizontal="@dimen/px_5.0_dp"
+                    android:textColor="@android:color/white"
+                    android:layout_marginHorizontal="@dimen/px_10.0_dp"
+                    android:layout_marginVertical="@dimen/px_4.0_dp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+
+                    android:layout_width="@dimen/px_110.0_dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/recovered_cases"
+                    android:fontFamily="@font/semibold"
+                    android:textSize="@dimen/px_14_sp"
+                    android:paddingHorizontal="@dimen/px_5.0_dp"
+                    android:textColor="@android:color/white"
+                    android:layout_marginHorizontal="@dimen/px_10.0_dp"
+                    android:layout_marginVertical="@dimen/px_4.0_dp" />
+
+                <TextView
+                    android:id="@+id/recovered_cases"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:fontFamily="@font/semibold"
+                    android:textSize="@dimen/px_14_sp"
+                    android:paddingHorizontal="@dimen/px_5.0_dp"
+                    android:textColor="@android:color/white"
+                    android:layout_marginHorizontal="@dimen/px_10.0_dp"
+                    android:layout_marginVertical="@dimen/px_4.0_dp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+
+                    android:layout_width="@dimen/px_110.0_dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/total_cases"
+                    android:fontFamily="@font/semibold"
+                    android:textSize="@dimen/px_14_sp"
+                    android:paddingHorizontal="@dimen/px_5.0_dp"
+                    android:textColor="@android:color/white"
+                    android:layout_marginHorizontal="@dimen/px_10.0_dp"
+                    android:layout_marginVertical="@dimen/px_4.0_dp" />
+
+                <TextView
+                    android:id="@+id/total_cases"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:fontFamily="@font/semibold"
+                    android:textSize="@dimen/px_14_sp"
+                    android:paddingHorizontal="@dimen/px_5.0_dp"
+                    android:textColor="@android:color/white"
+                    android:layout_marginHorizontal="@dimen/px_10.0_dp"
+                    android:layout_marginVertical="@dimen/px_4.0_dp" />
+
+            </LinearLayout>
+
+            <TextView
+                android:background="@drawable/rounder_ended_all_2"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/px_30.0_dp"
+                android:text="Deaths Report"
+                android:gravity="center"
+                android:fontFamily="@font/semibold"
+                android:textSize="@dimen/px_18_sp"
+                android:paddingHorizontal="@dimen/px_5.0_dp"
+                android:textColor="@android:color/white"
+                android:layout_marginHorizontal="@dimen/px_10.0_dp"
+                android:layout_marginVertical="@dimen/px_4.0_dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+
+                    android:layout_width="@dimen/px_110.0_dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/total_deaths"
+                    android:fontFamily="@font/semibold"
+                    android:textSize="@dimen/px_14_sp"
+                    android:paddingHorizontal="@dimen/px_5.0_dp"
+                    android:textColor="@android:color/white"
+                    android:layout_marginHorizontal="@dimen/px_10.0_dp"
+                    android:layout_marginVertical="@dimen/px_4.0_dp" />
+
+                <TextView
+                    android:id="@+id/total_deaths"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:fontFamily="@font/semibold"
+                    android:textSize="@dimen/px_14_sp"
+                    android:paddingHorizontal="@dimen/px_5.0_dp"
+                    android:textColor="@android:color/white"
+                    android:layout_marginHorizontal="@dimen/px_10.0_dp"
+                    android:layout_marginVertical="@dimen/px_4.0_dp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+
+                    android:layout_width="@dimen/px_110.0_dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/new_deaths"
+                    android:fontFamily="@font/semibold"
+                    android:textSize="@dimen/px_14_sp"
+                    android:paddingHorizontal="@dimen/px_5.0_dp"
+                    android:textColor="@android:color/white"
+                    android:layout_marginHorizontal="@dimen/px_10.0_dp"
+                    android:layout_marginVertical="@dimen/px_4.0_dp" />
+
+                <TextView
+                    android:id="@+id/new_deaths"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:fontFamily="@font/semibold"
+                    android:textSize="@dimen/px_14_sp"
+                    android:paddingHorizontal="@dimen/px_5.0_dp"
+                    android:textColor="@android:color/white"
+                    android:layout_marginHorizontal="@dimen/px_10.0_dp"
+                    android:layout_marginVertical="@dimen/px_4.0_dp" />
+
+            </LinearLayout>
+
+
+            <TextView
+                android:background="@drawable/rounder_ended_all_2"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/px_30.0_dp"
+                android:text="Today Tests "
+                android:gravity="center"
+                android:fontFamily="@font/semibold"
+                android:textSize="@dimen/px_18_sp"
+                android:paddingHorizontal="@dimen/px_5.0_dp"
+                android:textColor="@android:color/white"
+                android:layout_marginHorizontal="@dimen/px_10.0_dp"
+                android:layout_marginVertical="@dimen/px_4.0_dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+
+                    android:layout_width="@dimen/px_110.0_dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/total_tests"
+                    android:fontFamily="@font/semibold"
+                    android:textSize="@dimen/px_14_sp"
+                    android:paddingHorizontal="@dimen/px_5.0_dp"
+                    android:textColor="@android:color/white"
+                    android:layout_marginHorizontal="@dimen/px_10.0_dp"
+                    android:layout_marginVertical="@dimen/px_4.0_dp" />
+
+                <TextView
+                    android:id="@+id/total_tests"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:fontFamily="@font/semibold"
+                    android:textSize="@dimen/px_14_sp"
+                    android:paddingHorizontal="@dimen/px_5.0_dp"
+                    android:textColor="@android:color/white"
+                    android:layout_marginHorizontal="@dimen/px_10.0_dp"
+                    android:layout_marginVertical="@dimen/px_4.0_dp" />
+
+            </LinearLayout>
+
+            <TextView
+                android:background="@drawable/rounder_ended_all_2"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/px_30.0_dp"
+                android:text="Date "
+                android:gravity="center"
+                android:fontFamily="@font/semibold"
+                android:textSize="@dimen/px_18_sp"
+                android:paddingHorizontal="@dimen/px_5.0_dp"
+                android:textColor="@android:color/white"
+                android:layout_marginHorizontal="@dimen/px_10.0_dp"
+                android:layout_marginVertical="@dimen/px_4.0_dp" />
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="@dimen/px_110.0_dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/day"
+                    android:fontFamily="@font/semibold"
+                    android:textSize="@dimen/px_14_sp"
+                    android:paddingHorizontal="@dimen/px_5.0_dp"
+                    android:textColor="@android:color/white"
+                    android:layout_marginHorizontal="@dimen/px_10.0_dp"
+                    android:layout_marginVertical="@dimen/px_4.0_dp" />
+
+                <TextView
+                    android:id="@+id/day"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:fontFamily="@font/semibold"
+                    android:textSize="@dimen/px_14_sp"
+                    android:paddingHorizontal="@dimen/px_5.0_dp"
+                    android:textColor="@android:color/white"
+
+                    android:layout_marginHorizontal="@dimen/px_10.0_dp"
+                    android:layout_marginVertical="@dimen/px_4.0_dp" />
+
+            </LinearLayout>
+
+
+            <TextView
+                android:background="@drawable/rounder_ended_all_2"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/px_30.0_dp"
+                android:text="Time "
+                android:gravity="center"
+                android:fontFamily="@font/semibold"
+                android:textSize="@dimen/px_18_sp"
+                android:paddingHorizontal="@dimen/px_5.0_dp"
+                android:textColor="@android:color/white"
+                android:layout_marginHorizontal="@dimen/px_10.0_dp"
+                android:layout_marginVertical="@dimen/px_4.0_dp" />
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="@dimen/px_110.0_dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/time"
+                    android:fontFamily="@font/semibold"
+                    android:textSize="@dimen/px_14_sp"
+                    android:paddingHorizontal="@dimen/px_5.0_dp"
+                    android:textColor="@android:color/white"
+                    android:layout_marginHorizontal="@dimen/px_10.0_dp"
+                    android:layout_marginVertical="@dimen/px_4.0_dp" />
+
+                <TextView
+                    android:id="@+id/time"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/px_10.0_dp"
+                    android:layout_marginVertical="@dimen/px_4.0_dp"
+                    android:fontFamily="@font/semibold"
+                    android:paddingHorizontal="@dimen/px_5.0_dp"
+                    android:text=""
+                    android:textColor="@android:color/white"
+                    android:textSize="@dimen/px_10_sp" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+            <ImageView
+                android:id="@+id/covid_mask_icon"
+                android:layout_gravity="center|right"
+                android:layout_marginBottom="@dimen/px_75.0_dp"
+                android:layout_marginRight="@dimen/px_15.0_dp"
+                android:layout_width="@dimen/px_80.0_dp"
+                android:layout_height="@dimen/px_80.0_dp"
+                android:src="@android:color/transparent"/>
+        </FrameLayout>
+
+    </LinearLayout>
+
+</LinearLayout>
