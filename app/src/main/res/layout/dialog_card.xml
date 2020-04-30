@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardCornerRadius="@dimen/px_15.0_dp"
+    android:elevation="@dimen/px_15.0_dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/holo_red_dark"
+            android:orientation="horizontal">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/px_15.0_dp"
+                android:layout_gravity="center">
+
+
+                <TextView
+                    android:id="@+id/names"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:paddingRight="@dimen/px_2.0_dp"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/px_25_sp"
+                    android:fontFamily="@font/bicyclettebold"
+                    android:text="PLEASE ENTER PASSWORD!" />
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/px_2.0_dp"
+            android:background="@drawable/insta_gradient_3" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/px_100.0_dp"
+            android:background="@color/gray_text"
+            android:gravity="center"
+            android:orientation="horizontal">
+            <EditText
+                android:id="@+id/edit_text"
+                android:layout_width="match_parent"
+                android:layout_marginHorizontal="@dimen/px_20.0_dp"
+                android:layout_height="@dimen/px_70.0_dp"
+                android:gravity="start|center"
+                android:singleLine="true"
+                android:padding="@dimen/px_15.0_dp"
+                android:textColor="@color/black"
+                android:textColorHint="@color/black"
+
+                android:textSize="@dimen/px_25_sp"
+                android:fontFamily="@font/bicyclettebold"
+                android:hint="Password" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/px_56.0_dp"
+            android:weightSum="1"
+            android:background="@color/gray_text"
+            android:orientation="horizontal">
+            <Button
+                android:id="@+id/btn_cancel"
+                android:layout_width="0dp"
+                android:layout_weight=".5"
+                android:background="@drawable/round_shape_red"
+                android:padding="@dimen/px_5.0_dp"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:textColor="@color/white"
+                android:textSize="@dimen/px_20_sp"
+                android:layout_marginHorizontal="@dimen/px_2.0_dp"
+                android:fontFamily="@font/semibold"
+                android:text="CANCEL" />
+
+
+            <Button
+                android:layout_marginHorizontal="@dimen/px_2.0_dp"
+                android:background="@drawable/round_shape_red"
+                android:id="@+id/btn_ok"
+                android:layout_width="0dp"
+                android:layout_weight=".5"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:textColor="@color/white"
+                android:textSize="@dimen/px_20_sp"
+                android:fontFamily="@font/semibold"
+                android:text="OK" />
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+
+
+</androidx.cardview.widget.CardView>

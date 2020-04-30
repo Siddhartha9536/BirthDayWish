@@ -63,7 +63,7 @@ public class SplashScreenActivity extends AppCompatActivity {
             @Override
             public void run() {
                 startActivity(new Intent(context, GetNameActivity.class));
-                Animatoo.animateDiagonal(context);
+                Animatoo.animateSplit(context);
                 finish();
             }
         },1000);

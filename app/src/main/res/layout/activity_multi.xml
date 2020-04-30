@@ -97,21 +97,36 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content">
 
-                            <ImageView
+<!--                            <ImageView-->
+<!--                                android:layout_width="match_parent"-->
+<!--                                android:layout_height="@dimen/px_250.0_dp"-->
+<!--                                android:scaleType="centerCrop"-->
+<!--                                android:src="@drawable/imag3" />-->
+                            <com.smarteist.autoimageslider.SliderView
+                                android:id="@+id/imageSlider"
                                 android:layout_width="match_parent"
-                                android:layout_height="@dimen/px_250.0_dp"
-                                android:scaleType="centerCrop"
-                                android:src="@drawable/imag3" />
-
+                                android:layout_height="@dimen/px_300.0_dp"
+                                app:sliderAnimationDuration="600"
+                                app:sliderAutoCycleDirection="back_and_forth"
+                                app:sliderAutoCycleEnabled="true"
+                                app:sliderIndicatorAnimationDuration="600"
+                                app:sliderIndicatorGravity="center_horizontal|bottom"
+                                app:sliderIndicatorOrientation="horizontal"
+                                app:sliderIndicatorPadding="@dimen/px_100.0_dp"
+                                app:sliderIndicatorRadius="2dp"
+                                app:sliderIndicatorSelectedColor="#5A5A5A"
+                                app:sliderIndicatorUnselectedColor="#FFF"
+                                app:sliderScrollTimeInSec="1"
+                                app:sliderStartAutoCycle="true" />
                             <View
                                 android:layout_width="match_parent"
-                                android:layout_height="@dimen/px_250.0_dp"
+                                android:layout_height="@dimen/px_300.0_dp"
                                 android:background="@color/overlay_dark_40" />
 
                             <TextView
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:layout_marginTop="@dimen/px_150.0_dp"
+                                android:layout_marginTop="@dimen/px_200.0_dp"
                                 android:paddingHorizontal="@dimen/px_10.0_dp"
                                 android:text="Family is not an Important thing, It is Everything"
                                 android:textSize="@dimen/_20sdp"

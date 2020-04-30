@@ -7,11 +7,13 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.Manifest;
+import android.app.Dialog;
 import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
+import android.graphics.Color;
 import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Build;
@@ -21,8 +23,13 @@ import android.telephony.PhoneNumberUtils;
 import android.util.Log;
 import android.view.Gravity;
 import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.Toast;
 
 import com.blogspot.atifsoftwares.animatoolib.Animatoo;
 import com.google.gson.Gson;
@@ -33,13 +40,18 @@ import com.images.activities.citynews.CityNewsActivity;
 import com.images.activities.topnews.TopNewsActivity;
 import com.images.adapters.AdapterHomeCategory;
 import com.images.adapters.AdapterNewsCategory;
+import com.images.adapters.SliderAdapterExample;
 import com.images.common.Utility;
 import com.images.common.ViewAnimation;
 import com.images.models.homeitems.HomeItems;
+import com.images.models.slider.SliderItem;
 import com.images.models.timesofindia.ItemItem;
 import com.images.models.timesofindia.NewsResponse;
 import com.images.widgets.SpacingItemDecoration;
 import com.restaurant.birthdaywish.R;
+import com.smarteist.autoimageslider.IndicatorAnimations;
+import com.smarteist.autoimageslider.SliderAnimations;
+import com.smarteist.autoimageslider.SliderView;
 
 import org.json.JSONObject;
 
@@ -68,11 +80,15 @@ public class MultiItemActivity extends AppCompatActivity {
     RecyclerView news_section;
     @BindView(R.id.lyt_progress)
     LinearLayout lyt_progress;
+    @BindView(R.id.imageSlider)
+    SliderView sliderView;
 
     AdapterHomeCategory mAdapter;
 
     // New Data
     List<ItemItem> itemItems;
+    // Slider adapter
+    SliderAdapterExample adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -83,10 +99,28 @@ public class MultiItemActivity extends AppCompatActivity {
         Animatoo.animateSplit(context);
 
 
+
+        adapter = new SliderAdapterExample(this);
+        initSlider();
+        sliderView.setSliderAdapter(adapter);
+
+        sliderView.setIndicatorAnimation(IndicatorAnimations.DROP); //set indicator animation by using SliderLayout.IndicatorAnimations. :WORM or THIN_WORM or COLOR or DROP or FILL or NONE or SCALE or SCALE_DOWN or SLIDE and SWAP!!
+        sliderView.setSliderTransformAnimation(SliderAnimations.SIMPLETRANSFORMATION);
+        sliderView.setAutoCycleDirection(SliderView.AUTO_CYCLE_DIRECTION_BACK_AND_FORTH);
+        sliderView.setIndicatorSelectedColor(Color.WHITE);
+        sliderView.setIndicatorUnselectedColor(Color.GRAY);
+        sliderView.setScrollTimeInSec(2); //set scroll delay in seconds :
+        sliderView.startAutoCycle();
+
+
+
+
         initComponent();
         dataNews();
 
     }
+
+
 
     private void initComponent() {
 
@@ -122,21 +156,21 @@ public class MultiItemActivity extends AppCompatActivity {
                     Intent intent = new Intent(context, Covid19StatsActivity.class);
                     intent.putExtra("key", "WORLD");
                     context.startActivity(intent);
-                    Animatoo.animateZoom(context);
+                    Animatoo.animateSplit(context);
                 } else if (position == 1) {
                     Intent intent = new Intent(context, LoveCalculatorActivity.class);
                     intent.putExtra("key", "INDIA");
                     context.startActivity(intent);
-                    Animatoo.animateDiagonal(context);
+                    Animatoo.animateSplit(context);
 
                 } else if (position == 2) {
-                    startActivity(new Intent(context, ProfileImagesActivity.class));
-                    Animatoo.animateDiagonal(context);
+                    getPassWord(position);
+
                 } else if (position == 3) {
                     Intent intent = new Intent(context, Covid19StatsActivity.class);
                     intent.putExtra("key", "INDIA");
                     context.startActivity(intent);
-                    Animatoo.animateDiagonal(context);
+                    Animatoo.animateSplit(context);
                 } else if (position == 4) {
                     SharedPreferences sharedpreferences = context.getSharedPreferences("UserData",
                             Context.MODE_PRIVATE);
@@ -145,26 +179,76 @@ public class MultiItemActivity extends AppCompatActivity {
                     editor.clear();
                     editor.commit();
                     startActivity(new Intent(context, GetNameActivity.class));
-                    Animatoo.animateDiagonal(context);
+                    Animatoo.animateSplit(context);
                     finish();
                 } else if (position == 5) {
-                    startActivity(new Intent(context, ProfileImagesActivity.class));
+                    getPassWord(position);
                 } else if (position == 6) {
-
-                    String smsNumber = "+919557505201";
-                    openWhatsApp(smsNumber, "Hi Siddhartha, ");
+                    openWhatsApp("+919536053122", "Hello Siddharth, ");
 
                 } else if (position == 7) {
-                    if (isPermissionGranted()) {
-                        call_action();
-                    }
+                    getPassWord(position);
+
 
                 }
-                GenerateToast.showErrorToastWOI(context, position + "");
 
             }
 
 
+        });
+
+
+    }
+
+    private void getPassWord(int position) {
+
+        final Dialog dialog = new Dialog(context);
+        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+        dialog.setContentView(R.layout.dialog_card);
+        dialog.getWindow().setLayout(WindowManager.LayoutParams.MATCH_PARENT, WindowManager.LayoutParams.WRAP_CONTENT);
+        dialog.setCancelable(false);
+        dialog.show();
+
+        EditText edit_text = (EditText) dialog.findViewById(R.id.edit_text);
+        Button btn_cancel = (Button) dialog.findViewById(R.id.btn_cancel);
+        Button btn_ok = (Button) dialog.findViewById(R.id.btn_ok);
+
+        btn_cancel.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                dialog.dismiss();
+            }
+        });
+
+        btn_ok.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String password = edit_text.getText().toString();
+                if(password.length()>1){
+                    if(password.equals("Angel1234")){
+                        if(position==2){
+                            startActivity(new Intent(context, ProfileImagesActivity.class));
+                            Animatoo.animateSplit(context);
+                        }else if(position==5){
+                            startActivity(new Intent(context, ProfileImagesActivity.class));
+                            Animatoo.animateSplit(context);
+                        }else if(position==7){
+                            if (isPermissionGranted()) {
+                                call_action();
+                            }
+                        }
+
+                    } else if(password.equals("Siddhi@#098")){
+                        GenerateToast.showSuccessToast(context,"Success");
+                    } else {
+                        GenerateToast.showErrorToastWOI(context,"Please enter correct password.");
+                    }
+                    dialog.dismiss();
+                }else {
+
+                    GenerateToast.showErrorToastWOI(context,"Please enter password.");
+                }
+            }
         });
 
 
@@ -192,7 +276,7 @@ public class MultiItemActivity extends AppCompatActivity {
     public void call_action() {
 
         Intent callIntent = new Intent(Intent.ACTION_CALL);
-        callIntent.setData(Uri.parse("tel:" + "+919557505201"));
+        callIntent.setData(Uri.parse("tel:" + "+919536053122"));
         if (ActivityCompat.checkSelfPermission(this, Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED) {
             // TODO: Consider calling
             //    ActivityCompat#requestPermissions
@@ -247,9 +331,7 @@ public class MultiItemActivity extends AppCompatActivity {
 
     @OnClick(R.id.family_icon)
     public void rotate(){
-        Log.d("gty" , "vcc");
-
-
+        getPassWord(0);
 
     }
 
@@ -362,6 +444,24 @@ public class MultiItemActivity extends AppCompatActivity {
         intent.putExtra("data" , obj);
         startActivity(intent);
         Animatoo.animateDiagonal(context);
+    }
+
+
+    private void initSlider(){
+        adapter.addItem(new SliderItem("1az4oJi0FQJvHRpnsYKIOevfwD9sAFyNo"));
+        adapter.addItem(new SliderItem("1almeiYxOOzvjFyaKwWlVX_TMYzf-MA1M"));
+        adapter.addItem(new SliderItem("1b21jnCUZHQT7rQyA7AK10b9wF4I_CePE"));
+        adapter.addItem(new SliderItem("1b5H9ZIXW3sfq2TnUY_IKDzVUuDYWePfS"));
+
+        adapter.addItem(new SliderItem("1bNK0Dc_u_kDOPoO_1yxh3NiX8lL2qOXm"));
+        adapter.addItem(new SliderItem("1b5Jv_9IXK9Jsvi6ronHdOXNLVPxIJdk9"));
+        adapter.addItem(new SliderItem("1b26XnGe1lc6AV_1V0A93d2ULbvIhoq5H"));
+        adapter.addItem(new SliderItem("1bGyGGjxspT_QwBybx3XjZvWICCrijThD"));
+        adapter.addItem(new SliderItem("1awT4Oux4zN-9Jv8q5aDWeZ6mI0iIpoam"));
+        adapter.addItem(new SliderItem("1axoB1p1rWfTl2HzUl5uRE3kEG50dtkWz"));
+//        adapter.addItem(new SliderItem(""));
+//        adapter.addItem(new SliderItem(""));
+//        adapter.addItem(new SliderItem(""));
     }
 
     private boolean doubleBackToExitPressedOnce;

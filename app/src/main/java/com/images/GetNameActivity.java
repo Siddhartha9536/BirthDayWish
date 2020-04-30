@@ -98,6 +98,7 @@ public class GetNameActivity extends AppCompatActivity {
                 Context.MODE_PRIVATE);
         if (sharedpreferences.contains("user_name")) {
             startActivity(new Intent(this, MultiItemActivity.class));
+            Animatoo.animateZoom(context);
             finish();
         }
     }
@@ -110,7 +111,7 @@ public class GetNameActivity extends AppCompatActivity {
             saveUserData(name);
             GenerateToast.showSuccessToast(context, "Your Welcome " + name +".");
             startActivity(new Intent(this, MultiItemActivity.class));
-            Animatoo.animateDiagonal(context);
+            Animatoo.animateZoom(context);
             finish();
         }else{
             get_name.setText("");

@@ -62,7 +62,7 @@ public class HorizontalImagesAdapter extends RecyclerView.Adapter<HorizontalImag
             public void run() {
                 Glide.with(mContext)
                         .load(ApiUrl.BASE_URL+details)
-                        .error(R.drawable.ic_launcher_background)
+                        .error(R.drawable.ic_back)
                         .into(holder.user_image);
             }
         });

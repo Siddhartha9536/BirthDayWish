@@ -57,6 +57,8 @@
                     android:text="Please Enter Your Name."
                     android:gravity="center"
                     android:textSize="@dimen/_16sdp"
+                    android:cursorVisible="true"
+                    android:textCursorDrawable="@drawable/cursor_white"
                     android:fontFamily="@font/mazzardh_regular"
                     android:background="@android:color/transparent"
                     android:textColor="@color/white"
@@ -69,6 +71,9 @@
                     android:fontFamily="@font/mazzardh_regular"
                     android:padding="@dimen/px_15.0_dp"
                     android:singleLine="true"
+                    android:cursorVisible="true"
+                    android:focusable="true"
+                    android:textCursorDrawable="@drawable/cursor_white"
                     android:gravity="center"
                     android:textSize="@dimen/_14sdp"
                     android:layout_height="@dimen/px_50.0_dp"
@@ -135,7 +140,7 @@
                 android:fontFamily="@font/semibold"
                 android:paddingHorizontal="@dimen/px_15.0_dp"
                 android:paddingBottom="@dimen/px_20.0_dp"
-                android:text="Developed by: Siddhartha" />
+                android:text="Developed by: Vishesh Prakash Dubey and Siddhartha" />
 
         </LinearLayout>
 

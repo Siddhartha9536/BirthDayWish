@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Family Pics</string>
+    <string name="app_name">Family</string>
     <string name="news_header">LIVE NEWS</string>
     <string name="family_items">POPULAR THINGS</string>
     <string name="appbar_scrolling_view_behavior" translatable="false">com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior</string>
