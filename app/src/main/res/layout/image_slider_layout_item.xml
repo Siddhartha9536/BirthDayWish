@@ -6,8 +6,10 @@
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:src="@drawable/round_shape_red"
         android:scaleType="fitXY"
-        android:id="@+id/image"
-        />
+        android:id="@+id/image" />
+
+
 
 </LinearLayout>

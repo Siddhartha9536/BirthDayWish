@@ -11,6 +11,8 @@ import com.images.apiurl.ApiUrl;
 import com.images.models.slider.SliderItem;
 import com.restaurant.birthdaywish.R;
 import com.smarteist.autoimageslider.SliderViewAdapter;
+import com.squareup.picasso.Picasso;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -49,25 +51,13 @@ public class SliderAdapterExample extends SliderViewAdapter<SliderAdapterExample
 
         SliderItem sliderItem = mSliderItems.get(position);
 
-//        viewHolder.textViewDescription.setText(sliderItem.getDescription());
-//        viewHolder.textViewDescription.setTextSize(16);
-//        viewHolder.textViewDescription.setTextColor(Color.WHITE);
-        Glide.with(viewHolder.itemView)
-                .load(ApiUrl.BASE_URL + sliderItem.getUrl())
-                .fitCenter()
-                .into(viewHolder.imageViewBackground);
+        Glide.with(context).load(ApiUrl.BASE_URL + sliderItem.getUrl()).into(viewHolder.imageViewBackground);
 
-        viewHolder.itemView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Toast.makeText(context, "This is item in position " + position, Toast.LENGTH_SHORT).show();
-            }
-        });
+
     }
 
     @Override
     public int getCount() {
-        //slider view count could be dynamic size
         return mSliderItems.size();
     }
 
@@ -75,14 +65,11 @@ public class SliderAdapterExample extends SliderViewAdapter<SliderAdapterExample
 
         View itemView;
         ImageView imageViewBackground;
-//        ImageView imageGifContainer;
-//        TextView textViewDescription;
 
         public SliderAdapterVH(View itemView) {
             super(itemView);
             imageViewBackground = itemView.findViewById(R.id.image);
-//            imageGifContainer = itemView.findViewById(R.id.iv_gif_container);
-//            textViewDescription = itemView.findViewById(R.id.tv_auto_image_slider);
+
             this.itemView = itemView;
         }
     }

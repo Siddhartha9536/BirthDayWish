@@ -105,14 +105,14 @@
                             <com.smarteist.autoimageslider.SliderView
                                 android:id="@+id/imageSlider"
                                 android:layout_width="match_parent"
-                                android:layout_height="@dimen/px_300.0_dp"
+                                android:layout_height="@dimen/px_260.0_dp"
                                 app:sliderAnimationDuration="600"
+                                android:background="@drawable/imag3"
                                 app:sliderAutoCycleDirection="back_and_forth"
                                 app:sliderAutoCycleEnabled="true"
                                 app:sliderIndicatorAnimationDuration="600"
                                 app:sliderIndicatorGravity="center_horizontal|bottom"
                                 app:sliderIndicatorOrientation="horizontal"
-                                app:sliderIndicatorPadding="@dimen/px_100.0_dp"
                                 app:sliderIndicatorRadius="2dp"
                                 app:sliderIndicatorSelectedColor="#5A5A5A"
                                 app:sliderIndicatorUnselectedColor="#FFF"
@@ -120,16 +120,16 @@
                                 app:sliderStartAutoCycle="true" />
                             <View
                                 android:layout_width="match_parent"
-                                android:layout_height="@dimen/px_300.0_dp"
+                                android:layout_height="@dimen/px_260.0_dp"
                                 android:background="@color/overlay_dark_40" />
 
                             <TextView
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:layout_marginTop="@dimen/px_200.0_dp"
+                                android:layout_marginTop="@dimen/px_180.0_dp"
                                 android:paddingHorizontal="@dimen/px_10.0_dp"
                                 android:text="Family is not an Important thing, It is Everything"
-                                android:textSize="@dimen/_20sdp"
+                                android:textSize="@dimen/_13sdp"
                                 android:textColor="@android:color/white"
                                 android:fontFamily="@font/mazzardh_regular"
                                 android:gravity="center" />
@@ -139,7 +139,7 @@
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="@dimen/px_200.0_dp"
-                            android:layout_marginTop="-30dp"
+                            android:layout_marginTop="@dimen/px_10.0_dp"
                             android:orientation="vertical">
 
                             <androidx.cardview.widget.CardView
@@ -175,7 +175,7 @@
                             android:id="@+id/recyclerView"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:layout_marginTop="-50dp"
+                            android:layout_marginTop="-60dp"
                             android:paddingLeft="@dimen/px_10.0_dp"
                             android:paddingRight="@dimen/px_10.0_dp"
                             android:scrollbars="vertical"

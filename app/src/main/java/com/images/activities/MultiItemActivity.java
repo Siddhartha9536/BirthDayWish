@@ -37,6 +37,7 @@ import com.images.GenerateToast;
 import com.images.GetNameActivity;
 import com.images.ProfileImagesActivity;
 import com.images.activities.citynews.CityNewsActivity;
+import com.images.activities.images2.FamilyImages2;
 import com.images.activities.topnews.TopNewsActivity;
 import com.images.adapters.AdapterHomeCategory;
 import com.images.adapters.AdapterNewsCategory;
@@ -105,10 +106,10 @@ public class MultiItemActivity extends AppCompatActivity {
         sliderView.setSliderAdapter(adapter);
 
         sliderView.setIndicatorAnimation(IndicatorAnimations.DROP); //set indicator animation by using SliderLayout.IndicatorAnimations. :WORM or THIN_WORM or COLOR or DROP or FILL or NONE or SCALE or SCALE_DOWN or SLIDE and SWAP!!
-        sliderView.setSliderTransformAnimation(SliderAnimations.SIMPLETRANSFORMATION);
+        sliderView.setSliderTransformAnimation(SliderAnimations.CUBEOUTDEPTHTRANSFORMATION);
         sliderView.setAutoCycleDirection(SliderView.AUTO_CYCLE_DIRECTION_BACK_AND_FORTH);
-        sliderView.setIndicatorSelectedColor(Color.WHITE);
-        sliderView.setIndicatorUnselectedColor(Color.GRAY);
+        sliderView.setIndicatorSelectedColor(Color.RED);
+        sliderView.setIndicatorUnselectedColor(getResources().getColor(R.color.white));
         sliderView.setScrollTimeInSec(2); //set scroll delay in seconds :
         sliderView.startAutoCycle();
 
@@ -164,7 +165,15 @@ public class MultiItemActivity extends AppCompatActivity {
                     Animatoo.animateSplit(context);
 
                 } else if (position == 2) {
-                    getPassWord(position);
+                    SharedPreferences sharedpreferences = getSharedPreferences("UserData",
+                            Context.MODE_PRIVATE);
+                    if(sharedpreferences.contains("password")){
+                        startActivity(new Intent(context, ProfileImagesActivity.class));
+                        Animatoo.animateSplit(context);
+
+                    }else{
+                        getPassWord(position);
+                    }
 
                 } else if (position == 3) {
                     Intent intent = new Intent(context, Covid19StatsActivity.class);
@@ -182,12 +191,29 @@ public class MultiItemActivity extends AppCompatActivity {
                     Animatoo.animateSplit(context);
                     finish();
                 } else if (position == 5) {
-                    getPassWord(position);
+                    SharedPreferences sharedpreferences = getSharedPreferences("UserData",
+                            Context.MODE_PRIVATE);
+                    if(sharedpreferences.contains("password")){
+                        startActivity(new Intent(context, FamilyImages2.class));
+                        Animatoo.animateSplit(context);
+
+                    }else{
+                      getPassWord(position);
+                    }
                 } else if (position == 6) {
                     openWhatsApp("+919536053122", "Hello Siddharth, ");
 
                 } else if (position == 7) {
-                    getPassWord(position);
+                    SharedPreferences sharedpreferences = getSharedPreferences("UserData",
+                            Context.MODE_PRIVATE);
+                    if(sharedpreferences.contains("password")){
+                        if (isPermissionGranted()) {
+                            call_action();
+                        }
+
+                    }else{
+                        getPassWord(position);
+                    }
 
 
                 }
@@ -226,17 +252,23 @@ public class MultiItemActivity extends AppCompatActivity {
                 String password = edit_text.getText().toString();
                 if(password.length()>1){
                     if(password.equals("Angel1234")){
-                        if(position==2){
-                            startActivity(new Intent(context, ProfileImagesActivity.class));
-                            Animatoo.animateSplit(context);
-                        }else if(position==5){
-                            startActivity(new Intent(context, ProfileImagesActivity.class));
-                            Animatoo.animateSplit(context);
-                        }else if(position==7){
-                            if (isPermissionGranted()) {
-                                call_action();
+                        SharedPreferences pref = getApplicationContext().getSharedPreferences("UserData", 0); // 0 - for private mode
+                        SharedPreferences.Editor editor = pref.edit();
+                        editor.putString("password",password);
+                        editor.commit();
+
+                            if(position==2){
+                                startActivity(new Intent(context, ProfileImagesActivity.class));
+                                Animatoo.animateSplit(context);
+                            }else if(position==5){
+                                startActivity(new Intent(context, FamilyImages2.class));
+                                Animatoo.animateSplit(context);
+                            }else if(position==7){
+                                if (isPermissionGranted()) {
+                                    call_action();
+                                }
                             }
-                        }
+
 
                     } else if(password.equals("Siddhi@#098")){
                         GenerateToast.showSuccessToast(context,"Success");
@@ -330,7 +362,7 @@ public class MultiItemActivity extends AppCompatActivity {
     }
 
     @OnClick(R.id.family_icon)
-    public void rotate(){
+    public void admin(){
         getPassWord(0);
 
     }
@@ -453,10 +485,13 @@ public class MultiItemActivity extends AppCompatActivity {
         adapter.addItem(new SliderItem("1b21jnCUZHQT7rQyA7AK10b9wF4I_CePE"));
         adapter.addItem(new SliderItem("1b5H9ZIXW3sfq2TnUY_IKDzVUuDYWePfS"));
 
-        adapter.addItem(new SliderItem("1bNK0Dc_u_kDOPoO_1yxh3NiX8lL2qOXm"));
+        adapter.addItem(new SliderItem(""));
         adapter.addItem(new SliderItem("1b5Jv_9IXK9Jsvi6ronHdOXNLVPxIJdk9"));
         adapter.addItem(new SliderItem("1b26XnGe1lc6AV_1V0A93d2ULbvIhoq5H"));
-        adapter.addItem(new SliderItem("1bGyGGjxspT_QwBybx3XjZvWICCrijThD"));
+        adapter.addItem(new SliderItem("1bw4BD9uZa0PT6mgEyuGMu0r5ruy0lgzG"));
+        adapter.addItem(new SliderItem("1cBgwoxaggC0gIx5ZWORqUFWlT6VjHyOY"));
+        adapter.addItem(new SliderItem("1cCgme4swINN4xs7sCV53IW-LJxobPeYU"));
+        adapter.addItem(new SliderItem("1bxZ9wgZRDIGuJ6AqHmxBvqrtBZaXqDse"));
         adapter.addItem(new SliderItem("1awT4Oux4zN-9Jv8q5aDWeZ6mI0iIpoam"));
         adapter.addItem(new SliderItem("1axoB1p1rWfTl2HzUl5uRE3kEG50dtkWz"));
 //        adapter.addItem(new SliderItem(""));

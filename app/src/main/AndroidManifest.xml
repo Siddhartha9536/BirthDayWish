@@ -14,13 +14,14 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name="com.images.activities.FullStoryOfNews"></activity>
+        <activity android:name="com.images.activities.images2.FamilyImages2"></activity>
+        <activity android:name="com.images.activities.FullStoryOfNews" />
         <activity android:name="com.images.activities.ShowImageActivity" />
         <activity android:name="com.images.activities.topnews.NewsPageActivity" />
         <activity android:name="com.images.activities.LoveCalculatorActivity" />
         <activity android:name="com.images.activities.Covid19StatsActivity" />
         <activity android:name="com.images.activities.Covid19Activity" />
-        <activity android:name="com.images.activities.MultiItemActivity"></activity>
+        <activity android:name="com.images.activities.MultiItemActivity" />
         <activity android:name="com.images.SplashScreenActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
