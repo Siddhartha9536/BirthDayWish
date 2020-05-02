@@ -7,33 +7,40 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
+
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+
 import com.google.gson.Gson;
 import com.images.GenerateToast;
 import com.images.adapters.AdapterCityNews;
+import com.images.adapters.AdapterPhotoNews;
 import com.images.common.ViewAnimation;
-import com.images.models.timesofindia.topnews.NewsItemItem;
+
+import com.images.models.photonews.NewsItemItem;
+import com.images.models.photonews.Photores;
 import com.images.models.timesofindia.topnews.TopNewsRes;
 import com.restaurant.birthdaywish.R;
+
 import java.util.List;
+
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.Response;
 
-public class FragmentTabsStore extends Fragment {
+public class PhotoNewsFragmentTabs extends Fragment {
     private final static int LOADING_DURATION = 3500;
     com.images.models.timesofindia.citynews.ItemItemCity itemItem;
     RecyclerView recyclerView;
     LinearLayout lyt_progress;
 
-    public FragmentTabsStore(com.images.models.timesofindia.citynews.ItemItemCity itemItem) {
+    public PhotoNewsFragmentTabs(com.images.models.timesofindia.citynews.ItemItemCity itemItem) {
         this.itemItem = itemItem;
     }
 
-    public static FragmentTabsStore newInstance(com.images.models.timesofindia.citynews.ItemItemCity itemItem) {
-        FragmentTabsStore fragment = new FragmentTabsStore(itemItem);
+    public static PhotoNewsFragmentTabs newInstance(com.images.models.timesofindia.citynews.ItemItemCity itemItem) {
+        PhotoNewsFragmentTabs fragment = new PhotoNewsFragmentTabs(itemItem);
 
         return fragment;
     }
@@ -73,7 +80,7 @@ public class FragmentTabsStore extends Fragment {
 
 
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity(), LinearLayoutManager.VERTICAL, false));
-        AdapterCityNews adapterTopNews = new AdapterCityNews(getActivity(), newsItemItems);
+        AdapterPhotoNews adapterTopNews = new AdapterPhotoNews(getActivity(), newsItemItems);
         recyclerView.setAdapter(adapterTopNews);
         recyclerView.setOnFlingListener(null);
 
@@ -115,9 +122,14 @@ public class FragmentTabsStore extends Fragment {
                 Gson gson = new Gson();
 
                 List<NewsItemItem> newsItem;
-                TopNewsRes newsResponse = gson.fromJson(s,TopNewsRes.class);
+                Photores newsResponse = gson.fromJson(s,Photores.class);
                 newsItem = newsResponse.getNewsItem();
-                initComponent(newsItem);
+//                if(!newsItemItems.isEmpty()) {
+//                    if(newsItemItems.size()>0){
+                  initComponent(newsItem);
+//                    }
+
+//                }
 
             } catch (Exception e){
                 GenerateToast.showErrorToastWOI(getActivity(), e.toString());

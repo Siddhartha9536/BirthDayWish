@@ -8,13 +8,18 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.blogspot.atifsoftwares.animatoolib.Animatoo;
+import com.bumptech.glide.Priority;
+import com.bumptech.glide.request.RequestOptions;
 import com.images.activities.FullStoryOfNews;
 import com.images.activities.ShowImageActivity;
+import com.images.apiurl.ApiUrl;
+import com.images.imageloader.PicassoImageLoader;
 import com.images.models.homeitems.HomeItems;
 import com.images.models.timesofindia.topnews.Image;
 import com.images.models.timesofindia.topnews.NewsItemItem;
@@ -42,6 +47,7 @@ public class AdapterTopNews extends RecyclerView.Adapter<RecyclerView.ViewHolder
         public TextView caption;
         public TextView dateline;
         public TextView ByLine;
+        public ProgressBar progressBar;
 
         public OriginalViewHolder(View v) {
             super(v);
@@ -51,6 +57,7 @@ public class AdapterTopNews extends RecyclerView.Adapter<RecyclerView.ViewHolder
             caption = (TextView) v.findViewById(R.id.caption);
             ByLine = (TextView) v.findViewById(R.id.ByLine);
             dateline = (TextView) v.findViewById(R.id.dateline);
+            progressBar = (ProgressBar) v.findViewById(R.id.progress);
         }
     }
 
@@ -87,9 +94,14 @@ public class AdapterTopNews extends RecyclerView.Adapter<RecyclerView.ViewHolder
                 view.image.post(new Runnable() {
                     @Override
                     public void run() {
-                        Picasso.with(ctx)
-                                .load(image1.getPhoto().replace("http" , "https") + p.getNewsItemId())
-                                .into(view.image);
+                        RequestOptions options = new RequestOptions()
+                                .centerCrop()
+                                .priority(Priority.HIGH);
+
+                        new PicassoImageLoader(view.image,view.progressBar).load(image1.getPhoto().replace("http" , "https") + p.getNewsItemId(),options);
+//                        Picasso.with(ctx)
+//                                .load(image1.getPhoto().replace("http" , "https") + p.getNewsItemId())
+//                                .into(view.image);
 
                     }
                 });
@@ -97,9 +109,14 @@ public class AdapterTopNews extends RecyclerView.Adapter<RecyclerView.ViewHolder
                 view.image.post(new Runnable() {
                     @Override
                     public void run() {
-                        Picasso.with(ctx)
-                                .load(image1.getPhoto().replace("http" , "https"))
-                                .into(view.image);
+                        RequestOptions options = new RequestOptions()
+                                .centerCrop()
+                                .priority(Priority.HIGH);
+
+                        new PicassoImageLoader(view.image,view.progressBar).load(image1.getPhoto().replace("http" , "https"),options);
+//                        Picasso.with(ctx)
+//                                .load(image1.getPhoto().replace("http" , "https"))
+//                                .into(view.image);
                     }
                 });
             }

@@ -118,28 +118,29 @@
                                 app:sliderIndicatorUnselectedColor="#FFF"
                                 app:sliderScrollTimeInSec="1"
                                 app:sliderStartAutoCycle="true" />
-                            <View
-                                android:layout_width="match_parent"
-                                android:layout_height="@dimen/px_260.0_dp"
-                                android:background="@color/overlay_dark_40" />
+
 
                             <TextView
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:layout_marginTop="@dimen/px_180.0_dp"
+                                android:layout_marginTop="@dimen/px_190.0_dp"
                                 android:paddingHorizontal="@dimen/px_10.0_dp"
                                 android:text="Family is not an Important thing, It is Everything"
                                 android:textSize="@dimen/_13sdp"
                                 android:textColor="@android:color/white"
                                 android:fontFamily="@font/mazzardh_regular"
                                 android:gravity="center" />
+<!--                            <View-->
+<!--                                android:layout_width="match_parent"-->
+<!--                                android:layout_height="@dimen/px_260.0_dp"-->
+<!--                                android:background="@color/colorOverlay" />-->
 
                         </RelativeLayout>
 
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="@dimen/px_200.0_dp"
-                            android:layout_marginTop="@dimen/px_10.0_dp"
+                            android:layout_marginTop="-8dp"
                             android:orientation="vertical">
 
                             <androidx.cardview.widget.CardView
@@ -219,6 +220,7 @@
                             android:id="@+id/news_section"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
+                            android:layout_gravity="center"
                             android:layout_marginTop="-50dp"
                             android:paddingLeft="@dimen/px_10.0_dp"
                             android:layout_marginBottom="@dimen/px_40.0_dp"

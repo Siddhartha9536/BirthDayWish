@@ -11,6 +11,7 @@ import android.os.Bundle;
 import android.view.View;
 
 import com.blogspot.atifsoftwares.animatoolib.Animatoo;
+import com.images.GenerateToast;
 import com.images.activities.MultiItemActivity;
 import com.images.activities.ShowImageActivity;
 import com.images.adapters.AdapterFamilyImages2;
@@ -53,26 +54,30 @@ public class FamilyImages2 extends AppCompatActivity {
         recyclerView.setLayoutManager(new GridLayoutManager(this, 2));
         recyclerView.addItemDecoration(new SpacingItemDecoration(2, Utility.dpToPx(this, 5), true));
         recyclerView.setHasFixedSize(true);
-//        recyclerView.setItemViewCacheSize(20);
-//        recyclerView.setDrawingCacheEnabled(true);
-//        recyclerView.setDrawingCacheQuality(View.DRAWING_CACHE_QUALITY_HIGH);
-
+        recyclerView.setItemViewCacheSize(20);
+        recyclerView.setDrawingCacheEnabled(true);
+        recyclerView.setDrawingCacheQuality(View.DRAWING_CACHE_QUALITY_HIGH);
 
 
         initImages();
 
-        //set data and list adapter
-        AdapterFamilyImages2 mAdapter = new AdapterFamilyImages2(this, items);
-        recyclerView.setAdapter(mAdapter);
-        mAdapter.setOnItemClickListener(new AdapterFamilyImages2.OnItemClickListener() {
-            @Override
-            public void onItemClick(View view, SliderItem obj, int position) {
-                Intent n = new Intent(context , ShowImageActivity.class);
-                n.putExtra("image_url" , ApiUrl.BASE_URL+obj.getUrl());
-                context.startActivity(n);
-                Animatoo.animateSplit(context);
-            }
-        });
+        if(ApiUrl.isConnected(context)) {
+
+            //set data and list adapter
+            AdapterFamilyImages2 mAdapter = new AdapterFamilyImages2(this, items);
+            recyclerView.setAdapter(mAdapter);
+            mAdapter.setOnItemClickListener(new AdapterFamilyImages2.OnItemClickListener() {
+                @Override
+                public void onItemClick(View view, SliderItem obj, int position) {
+                    Intent n = new Intent(context, ShowImageActivity.class);
+                    n.putExtra("image_url", ApiUrl.BASE_URL + obj.getUrl());
+                    context.startActivity(n);
+                    Animatoo.animateSplit(context);
+                }
+            });
+        } else {
+            GenerateToast.showErrorToastWOI(context, "Internet is not available.");
+        }
     }
 
 
@@ -94,12 +99,12 @@ public class FamilyImages2 extends AppCompatActivity {
 //        items.add(s2);
 //        items.add(s3);
 //        items.add(s4);
-        items.add(s5);
-        items.add(s6);
-        items.add(s7);
-        items.add(s8);
-        items.add(s9);
-        items.add(s10);
+//        items.add(s5);
+//        items.add(s6);
+//        items.add(s7);
+//        items.add(s8);
+//        items.add(s9);
+//        items.add(s10);
 
         SliderItem s11 = new SliderItem("1f7VT0er0a_K_ZfWeIaGT3yhxOMNLPseL");
         SliderItem s12 = new SliderItem("172468iGIQkatKSzrtNoCXpQDOfbMLvOl");
@@ -112,17 +117,16 @@ public class FamilyImages2 extends AppCompatActivity {
         SliderItem s19 = new SliderItem("10YV8NXWz1BDn3CusozHDyeG4j5SULmEB");
         SliderItem s20 = new SliderItem("10OKyRJes7g04ukkbHSnIanWejYVUVfkY");
 
-        items.add(s11);
-        items.add(s12);
-        items.add(s13);
-        items.add(s14);
-        items.add(s15);
+//        items.add(s11);
+//        items.add(s12);
+//        items.add(s13);
+//        items.add(s14);
+//        items.add(s15);
         items.add(s16);
         items.add(s17);
         items.add(s18);
         items.add(s19);
         items.add(s20);
-
 
         SliderItem s21 = new SliderItem("10O0beNOEC_IFjJAK6UMTNhDijljusN2g");
         SliderItem s22 = new SliderItem("10KTpR8z0rlHmYm1YvqXogOJlDU56Cq1F");
@@ -146,8 +150,6 @@ public class FamilyImages2 extends AppCompatActivity {
         items.add(s29);
         items.add(s30);
 
-
-
         SliderItem s31 = new SliderItem("10dxYsKYDbPY-N7kPB09B55RB6HMfFglX");
         SliderItem s32 = new SliderItem("1-TKU6avrzTz2Phch-FNJb53CbYNqemj8");
         SliderItem s33 = new SliderItem("1-EEpj8wCSR32yllykp3yzrwjPtsK8dMe");
@@ -170,8 +172,6 @@ public class FamilyImages2 extends AppCompatActivity {
         items.add(s39);
         items.add(s40);
 
-
-
         SliderItem s41 = new SliderItem("1-5sQy30zFib-U--f0FvEWGG6-Gt_2lIx");
         SliderItem s42 = new SliderItem("12Y8pY2F8xH3jCP60BCd2HEB2GHlHtpjF");
         SliderItem s43 = new SliderItem("16UdgbkoZIzBIf1zd3ryfvRZme8ENClqT");
@@ -182,7 +182,6 @@ public class FamilyImages2 extends AppCompatActivity {
         SliderItem s48 = new SliderItem("16EXopHrw6i-cgfaJkmbC_lsCubHelojL");
         SliderItem s49 = new SliderItem("16Erqsa_UTJwQsm_afSVidoOV0o12SYg-");
         SliderItem s50 = new SliderItem("16paniQC8_oYY8kDSPuGTm_kH5NlEGa4j");
-
 
         items.add(s41);
         items.add(s42);
@@ -217,8 +216,6 @@ public class FamilyImages2 extends AppCompatActivity {
         items.add(s59);
         items.add(s60);
 
-
-
         SliderItem s61 = new SliderItem("1f39uUznsXIb8FEwBAg13Ab6rirHKi07b");
         SliderItem s62 = new SliderItem("1f-JHN3ONIQPN0YMKJbZ29uVRjUlUJ7jW");
         SliderItem s63 = new SliderItem("14L4Q8Qnig71W9ySAuRlFFj43DRke_yFn");
@@ -252,7 +249,6 @@ public class FamilyImages2 extends AppCompatActivity {
         SliderItem s79 = new SliderItem("1efBvg0docsBWSn7D2CRJhbM9y7gc40TA");
         SliderItem s80 = new SliderItem("14SFvbxMsRqVLKE96skTY8YOGmOj3-TNJ");
 
-
         items.add(s71);
         items.add(s72);
         items.add(s73);
@@ -263,6 +259,7 @@ public class FamilyImages2 extends AppCompatActivity {
         items.add(s78);
         items.add(s79);
         items.add(s80);
+
         SliderItem s81 = new SliderItem("14FeSiOL1sD4x9Vj4QsC1jNZwlIRnzMPc");
         SliderItem s82 = new SliderItem("145p8s9fyiD_Rk8p9DgdCgtSTni2FsY3O");
         SliderItem s83 = new SliderItem("13yBwB7g59zdP3xMd4eV5vRcLnaYkYyYX");
@@ -284,7 +281,6 @@ public class FamilyImages2 extends AppCompatActivity {
         items.add(s88);
         items.add(s89);
         items.add(s90);
-
 
         SliderItem s91 = new SliderItem("13NlxgegBuErB-vg1ApD5tVC0SfvmEY2X");
         SliderItem s92 = new SliderItem("1eEErtliKgIM7kUQEmdSbi2NViSYPsRMV");
@@ -341,7 +337,6 @@ public class FamilyImages2 extends AppCompatActivity {
         SliderItem s119= new SliderItem("1dedAgi8_2mN66V3pTL94SkPAjI4svjLx");
         SliderItem s120= new SliderItem("11tiJS06yGsgXJj5DmjccL57JWQMnZIZj");
 
-
         items.add(s111);
         items.add(s112);
         items.add(s113);
@@ -352,6 +347,7 @@ public class FamilyImages2 extends AppCompatActivity {
         items.add(s118);
         items.add(s119);
         items.add(s120);
+
         SliderItem s121= new SliderItem("11t5u7euqLmXZnDwwuOhMBAOMlgsnnyA8");
         SliderItem s122= new SliderItem("1dbZzrnkMc4NfTmpyQ5GqTlCIxSfTE1X9");
         SliderItem s123= new SliderItem("11qgvfmKjx3eR1mAlQnFQ9HtLA5pLW8mE");
@@ -363,7 +359,6 @@ public class FamilyImages2 extends AppCompatActivity {
         SliderItem s129= new SliderItem("1dIhwDsL-eUqSpTGfo-qMOQJ8gi0DT-PX");
         SliderItem s130= new SliderItem("11Sei3nihrw9loWJ05mnqHbvz7Josmifr");
 
-
         items.add(s121);
         items.add(s122);
         items.add(s123);
@@ -374,6 +369,7 @@ public class FamilyImages2 extends AppCompatActivity {
         items.add(s128);
         items.add(s129);
         items.add(s130);
+
         SliderItem s131= new SliderItem("11B1QKwzIuES2DZqEy9uodqsL0ZEYVdbr");
         SliderItem s133= new SliderItem("10cKYbDzbKt6HxGvzF8unnwMQr8IYs3Ir");
         SliderItem s132= new SliderItem("11-deq8PTjHRlwySu6Qr3zj_9odOduS2L");
@@ -384,6 +380,7 @@ public class FamilyImages2 extends AppCompatActivity {
         SliderItem s138= new SliderItem("10qZC7FKXoHgyLMaklBfLczPvf2Kx-v9F");
         SliderItem s139= new SliderItem("1ccXp5aTSuZwf6y7m2KI-rRX0c9M--9MM");
         SliderItem s140= new SliderItem("10jsY3LJKx-XtChhR-0hJR0HI-xeW4WOJ");
+
         items.add(s131);
         items.add(s132);
         items.add(s133);
@@ -395,12 +392,12 @@ public class FamilyImages2 extends AppCompatActivity {
         items.add(s139);
         items.add(s140);
 
-
         SliderItem s141= new SliderItem("14Gf27szeUmmx8xVGTFxETfaNlEXi7XuX");
         SliderItem s142= new SliderItem("14HSYbf67jXqt1vIGCgMi01-9482sK85n");
         SliderItem s143= new SliderItem("1cY_pcgq5c47Sq7fL-kN43qdYAAutXWSK");
         SliderItem s144= new SliderItem("10iShtBRn6jtOm7i3ojrecOMauRX2_WYl");
         SliderItem s145= new SliderItem("10cKYbDzbKt6HxGvzF8unnwMQr8IYs3Ir");
+
         items.add(s141);
         items.add(s142);
         items.add(s143);
@@ -412,7 +409,6 @@ public class FamilyImages2 extends AppCompatActivity {
     @OnClick(R.id.back_icon)
     public void backPress(){
         onBackPressed();
-
     }
 
     @Override

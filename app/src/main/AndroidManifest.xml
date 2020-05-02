@@ -2,8 +2,11 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.restaurant.birthdaywish">
 
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.CALL_PHONE" />
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
 
     <application
         android:allowBackup="true"
@@ -32,6 +35,10 @@
         <activity android:name="com.images.GetNameActivity" />
         <activity android:name="com.images.activities.topnews.TopNewsActivity" />
         <activity android:name="com.images.activities.citynews.CityNewsActivity" />
+        <activity android:name="com.images.activities.sports.SportsNewsActivity" />
+        <activity android:name="com.images.activities.nrinews.NriNewsActivity" />
+        <activity android:name="com.images.activities.lifestyle.LifeStyleNewsActivity" />
+        <activity android:name="com.images.activities.photonews.PhotoNewsActivity" />
         <activity android:name="com.images.ProfileImagesActivity" />
         <activity android:name="com.images.MainActivity" />
     </application>

@@ -91,7 +91,7 @@
                            android:background="@drawable/insta_gradient_2"
                            android:layout_height="@dimen/px_60.0_dp"
                            app:tabGravity="fill"
-                           app:tabMaxWidth="@dimen/px_150.0_dp"
+                           app:tabMaxWidth="@dimen/px_180.0_dp"
                            app:tabMinWidth="@dimen/px_110.0_dp"
                            app:tabPadding="@dimen/px_2.0_dp"
                            app:tabIndicatorColor="@android:color/white"

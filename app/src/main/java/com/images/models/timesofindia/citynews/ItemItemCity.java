@@ -4,7 +4,7 @@ package com.images.models.timesofindia.citynews;
 import com.google.gson.annotations.SerializedName;
 
 
-public class ItemItem{
+public class ItemItemCity {
 
 	@SerializedName("category")
 	private String category;

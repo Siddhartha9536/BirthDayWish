@@ -47,7 +47,7 @@ public class TopNewsActivity extends AppCompatActivity {
         ButterKnife.bind(this);
         itemItem = (ItemItem) getIntent().getSerializableExtra("data");
         if(itemItem!=null){
-            title.setText(itemItem.getDefaultname());
+            title.setText(itemItem.getName());
         }
         Log.d("TAG", "onCreate: " + itemItem.toString());
         OkHttpHandler ok = new OkHttpHandler();

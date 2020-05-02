@@ -5,13 +5,17 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
+import com.bumptech.glide.Priority;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
+import com.bumptech.glide.request.RequestOptions;
 import com.images.apiurl.ApiUrl;
+import com.images.imageloader.PicassoImageLoader;
 import com.images.models.homeitems.HomeItems;
 import com.images.models.slider.SliderItem;
 import com.restaurant.birthdaywish.R;
@@ -42,11 +46,13 @@ public class AdapterFamilyImages2 extends RecyclerView.Adapter<RecyclerView.View
 
     public class OriginalViewHolder extends RecyclerView.ViewHolder {
         public ImageView image;
+        public ProgressBar progressBar;
 
 
         public OriginalViewHolder(View v) {
             super(v);
             image = (ImageView) v.findViewById(R.id.image);
+            progressBar = (ProgressBar) v.findViewById(R.id.progress);
 
         }
     }
@@ -66,15 +72,13 @@ public class AdapterFamilyImages2 extends RecyclerView.Adapter<RecyclerView.View
             OriginalViewHolder view = (OriginalViewHolder) holder;
 
             SliderItem p = items.get(position);
-            view.image.post(new Runnable() {
-                @Override
-                public void run() {
-                    Picasso.with(ctx)
-                            .load(ApiUrl.BASE_URL + p.getUrl())
-//                            .diskCacheStrategy( DiskCacheStrategy.ALL )
-                             .into(view.image);
-                }
-            });
+            RequestOptions options = new RequestOptions()
+                    .centerCrop()
+                    .priority(Priority.HIGH);
+
+            new PicassoImageLoader(view.image,view.progressBar).load(ApiUrl.BASE_URL + p.getUrl(),options);
+
+
             view.itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {

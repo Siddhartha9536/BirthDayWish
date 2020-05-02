@@ -38,6 +38,10 @@ import com.images.GetNameActivity;
 import com.images.ProfileImagesActivity;
 import com.images.activities.citynews.CityNewsActivity;
 import com.images.activities.images2.FamilyImages2;
+import com.images.activities.lifestyle.LifeStyleNewsActivity;
+import com.images.activities.nrinews.NriNewsActivity;
+import com.images.activities.photonews.PhotoNewsActivity;
+import com.images.activities.sports.SportsNewsActivity;
 import com.images.activities.topnews.TopNewsActivity;
 import com.images.adapters.AdapterHomeCategory;
 import com.images.adapters.AdapterNewsCategory;
@@ -109,11 +113,9 @@ public class MultiItemActivity extends AppCompatActivity {
         sliderView.setSliderTransformAnimation(SliderAnimations.CUBEOUTDEPTHTRANSFORMATION);
         sliderView.setAutoCycleDirection(SliderView.AUTO_CYCLE_DIRECTION_BACK_AND_FORTH);
         sliderView.setIndicatorSelectedColor(Color.RED);
-        sliderView.setIndicatorUnselectedColor(getResources().getColor(R.color.white));
+        sliderView.setIndicatorUnselectedColor(getResources().getColor(R.color.pink_300));
         sliderView.setScrollTimeInSec(2); //set scroll delay in seconds :
         sliderView.startAutoCycle();
-
-
 
 
         initComponent();
@@ -405,6 +407,13 @@ public class MultiItemActivity extends AppCompatActivity {
                 NewsResponse newsResponse = gson.fromJson(s,NewsResponse.class);
 
                 itemItems = newsResponse.getItem();
+                itemItems.remove(itemItems.get(2));
+                itemItems.remove(itemItems.get(4));
+                itemItems.remove(itemItems.get(6));
+                itemItems.remove(itemItems.get(6));
+                itemItems.remove(itemItems.get(6));
+                itemItems.remove(itemItems.get(6));
+
                 initComponent2(itemItems);
                 Log.d("Nesw", "onPostExecute: "+itemItems.size());
 
@@ -422,10 +431,9 @@ public class MultiItemActivity extends AppCompatActivity {
 
     private void initComponent2(List<ItemItem> itemItems) {
 
-        news_section.setLayoutManager(new LinearLayoutManager(this, RecyclerView.HORIZONTAL,false));
-//        news_section.addItemDecoration(new SpacingItemDecoration(1,
-//                Utility.dpToPx(this, 15), true));
-//        news_section.setHasFixedSize(true);
+        news_section.setLayoutManager(new LinearLayoutManager(this, RecyclerView.VERTICAL,false));
+//        news_section.addItemDecoration(new SpacingItemDecoration(2, Utility.dpToPx(this, 15), true));
+        news_section.setHasFixedSize(true);
         news_section.setNestedScrollingEnabled(false);
 
 
@@ -466,16 +474,59 @@ public class MultiItemActivity extends AppCompatActivity {
     }
 
     public void sectionYes(ItemItem obj){
-        Intent intent = new Intent(context, CityNewsActivity.class);
-        intent.putExtra("data" , obj);
-        startActivity(intent);
-        Animatoo.animateSplit(context);
+        if(obj.getName().equalsIgnoreCase("Sports")){
+            Intent intent = new Intent(context, SportsNewsActivity.class);
+            intent.putExtra("data" , obj);
+            startActivity(intent);
+            Animatoo.animateSplit(context);
+        } else if(obj.getName().equalsIgnoreCase("NRI")){
+            Intent intent = new Intent(context, NriNewsActivity.class);
+            intent.putExtra("data" , obj);
+            startActivity(intent);
+            Animatoo.animateSplit(context);
+        }else if(obj.getName().equalsIgnoreCase("Life & Style")){
+            Intent intent = new Intent(context, LifeStyleNewsActivity.class);
+            intent.putExtra("data" , obj);
+            startActivity(intent);
+            Animatoo.animateSplit(context);
+        }else if(obj.getName().equalsIgnoreCase("Photos")){
+            Intent intent = new Intent(context, PhotoNewsActivity.class);
+            intent.putExtra("data" , obj);
+            startActivity(intent);
+            Animatoo.animateSplit(context);
+        }else if(obj.getName().equalsIgnoreCase("Videos")){
+            Intent intent = new Intent(context, PhotoNewsActivity.class);
+            intent.putExtra("data" , obj);
+            startActivity(intent);
+            Animatoo.animateSplit(context);
+        }else {
+            Intent intent = new Intent(context, CityNewsActivity.class);
+            intent.putExtra("data" , obj);
+            startActivity(intent);
+            Animatoo.animateSplit(context);
+        }
     }
     public void sectionNo(ItemItem obj){
-        Intent intent = new Intent(context, TopNewsActivity.class);
-        intent.putExtra("data" , obj);
-        startActivity(intent);
-        Animatoo.animateDiagonal(context);
+        if(obj.getName().equalsIgnoreCase("Business")){
+            Intent intent = new Intent(context, CityNewsActivity.class);
+            intent.putExtra("data" , obj);
+            startActivity(intent);
+            Animatoo.animateSplit(context);
+
+        }
+        else if(obj.getName().equalsIgnoreCase("Science")){
+            Intent intent = new Intent(context, CityNewsActivity.class);
+            intent.putExtra("data" , obj);
+            startActivity(intent);
+            Animatoo.animateSplit(context);
+        }
+
+        else {
+            Intent intent = new Intent(context, TopNewsActivity.class);
+            intent.putExtra("data", obj);
+            startActivity(intent);
+            Animatoo.animateDiagonal(context);
+        }
     }
 
 

@@ -37,7 +37,6 @@ import retrofit2.Retrofit;
 
 public class Covid19StatsActivity extends AppCompatActivity {
 
-
     @BindView(R.id.india_covid19_recycler)
     RecyclerView india_covid19_recycler;
     @BindView(R.id.world_covid19_recycler)
@@ -48,24 +47,17 @@ public class Covid19StatsActivity extends AppCompatActivity {
     TextView search_item;
     @BindView(R.id.back_icon)
     ImageView back_icon;
-
     Context context;
     ProgressDialog progressDialog;
     Corona19IndiaAdapter corona19IndiaAdapter;
     Corona19WorldStatsAdapter corona19WorldStatsAdapter;
-
     ArrayList<String> countyArrayList;
     ArrayList<Cases> casesArrayList;
     ArrayList<Tests> testsArrayList;
     ArrayList<Deaths> deathsArrayList;
     ArrayList<String> dayArrayList;
     ArrayList<String> timeArrayList;
-
-
     String whichOneStats;
-
-
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -88,12 +80,7 @@ public class Covid19StatsActivity extends AppCompatActivity {
 
                 fetchIndiaCoronaStats();
             }
-
-
         }
-
-
-
     }
 
     @Override
@@ -112,7 +99,6 @@ public class Covid19StatsActivity extends AppCompatActivity {
     public void onBackPressed() {
         super.onBackPressed();
         Animatoo.animateZoom(context);
-
     }
 
     private void fetchIndiaCoronaStats() {
@@ -168,9 +154,6 @@ public class Covid19StatsActivity extends AppCompatActivity {
                     hideProgressBar();
                     try {
                         CoronaWorldStat wResponse = (CoronaWorldStat) response.body();
-
-                        Log.d("gettf", wResponse.getResponse().size() + "   dd");
-
                         if(wResponse.getResponse().size()>0){
                             countyArrayList = new ArrayList<>();
                             casesArrayList = new ArrayList<>();
@@ -197,12 +180,9 @@ public class Covid19StatsActivity extends AppCompatActivity {
 
                             }
 
-
-
                             corona19WorldStatsAdapter = new
                                     Corona19WorldStatsAdapter(countyArrayList, casesArrayList, testsArrayList,
                                     deathsArrayList , dayArrayList, timeArrayList, context);
-
 
                             LinearLayoutManager HorizontalLayout = new LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false);
                             world_covid19_recycler.setLayoutManager(HorizontalLayout);
@@ -212,12 +192,6 @@ public class Covid19StatsActivity extends AppCompatActivity {
                         } else {
 
                         }
-
-
-
-
-
-
 
                     }catch (Exception e){
                         GenerateToast.showErrorToast(context, e.toString());
@@ -232,12 +206,6 @@ public class Covid19StatsActivity extends AppCompatActivity {
             }
         });
     }
-
-
-
-
-
-
 
     public void showProgressBar(){
         progressDialog = ProgressDialog.show( context, null, null, false, true );

@@ -19,23 +19,22 @@ import com.bumptech.glide.Priority;
 import com.bumptech.glide.request.RequestOptions;
 import com.images.activities.FullStoryOfNews;
 import com.images.activities.ShowImageActivity;
-import com.images.apiurl.ApiUrl;
 import com.images.imageloader.PicassoImageLoader;
+import com.images.models.photonews.NewsItemItem;
 import com.images.models.timesofindia.topnews.Image;
-import com.images.models.timesofindia.topnews.NewsItemItem;
+
 import com.restaurant.birthdaywish.R;
-import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class AdapterCityNews extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
+public class AdapterPhotoNews extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
     private List<NewsItemItem> items = new ArrayList<>();
 
     private Context ctx;
 
-    public AdapterCityNews(Context context, List<NewsItemItem> items) {
+    public AdapterPhotoNews(Context context, List<NewsItemItem> items) {
         this.items = items;
         ctx = context;
     }
@@ -75,7 +74,7 @@ public class AdapterCityNews extends RecyclerView.Adapter<RecyclerView.ViewHolde
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         RecyclerView.ViewHolder vh;
-        View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.fragment_city_news, parent, false);
+        View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.fragment_photo_news, parent, false);
         vh = new OriginalViewHolder(v);
         return vh;
     }
@@ -87,7 +86,7 @@ public class AdapterCityNews extends RecyclerView.Adapter<RecyclerView.ViewHolde
             OriginalViewHolder view = (OriginalViewHolder) holder;
 
             NewsItemItem p = items.get(position);
-            Image image1 = p.getImage();
+
 
             if(p.getHeadLine()!=null){
                 if(p.getHeadLine().equals("")){
@@ -107,35 +106,35 @@ public class AdapterCityNews extends RecyclerView.Adapter<RecyclerView.ViewHolde
                 }
 
             }
-            if(p.getStory()!=null){
-                if(p.getStory().equals("")){
-                    view.brief_scroll.setVisibility(View.GONE);
-                }else{
-                    view.brief_scroll.setVisibility(View.VISIBLE);
-                    view.brief.setText(Html.fromHtml(p.getStory() + ""));
-                }
-            }
+//            if(p.getStory()!=null){
+//                if(p.getStory().equals("")){
+//                    view.brief_scroll.setVisibility(View.GONE);
+//                }else{
+//                    view.brief_scroll.setVisibility(View.VISIBLE);
+//                    view.brief.setText(Html.fromHtml(p.getStory() + ""));
+//                }
+//            }
 
-            if(image1.getPhotoCaption()!=null){
-                if(image1.getPhotoCaption().equals("")){
+            if(p.getCaption()!=null){
+                if(p.getCaption().equals("")){
                     view.caption.setVisibility(View.GONE);
                 }else{
                     view.caption.setVisibility(View.VISIBLE);
-                    view.caption.setText(Html.fromHtml("Photo Caption: "+image1.getPhotoCaption() + ""));
+                    view.caption.setText(Html.fromHtml("Photo Caption: "+p.getCaption() + ""));
                 }
 
             }
-            if(p.getByLine()!=null){
-                if(p.getByLine().equals("")){
-                    view.by_lyt.setVisibility(View.GONE);
-                }else{
-                    view.by_lyt.setVisibility(View.VISIBLE);
-                    view.ByLine.setText(Html.fromHtml("By: "+p.getByLine() + ""));
-                }
+//            if(p.()!=null){
+//                if(p.getByLine().equals("")){
+//                    view.by_lyt.setVisibility(View.GONE);
+//                }else{
+//                    view.by_lyt.setVisibility(View.VISIBLE);
+//                    view.ByLine.setText(Html.fromHtml("By: "+p.getByLine() + ""));
+//                }
+//
+//            }
 
-            }
-
-            if(image1.getPhoto().charAt((image1.getPhoto().length())-1) == '='){
+            if(p.getPhoto().charAt((p.getPhoto().length())-1) == '='){
                 view.image.post(new Runnable() {
                     @Override
                     public void run() {
@@ -144,10 +143,8 @@ public class AdapterCityNews extends RecyclerView.Adapter<RecyclerView.ViewHolde
                                 .priority(Priority.HIGH);
 
                         new PicassoImageLoader(view.image,view.progressBar).load(
-                                image1.getPhoto().replace("http" , "https") + p.getNewsItemId(),options);
-//                         Picasso.with(ctx)
-//                        .load(image1.getPhoto().replace("http" , "https") + p.getNewsItemId())
-//                        .into(view.image);
+                                p.getPhoto().replace("http" , "https") + p.getNewsItemId(),options);
+
 
                     }
                 });
@@ -159,10 +156,8 @@ public class AdapterCityNews extends RecyclerView.Adapter<RecyclerView.ViewHolde
                                 .centerCrop()
                                 .priority(Priority.HIGH);
 
-                        new PicassoImageLoader(view.image,view.progressBar).load(image1.getPhoto().replace("http" , "https"),options);
-//                        Picasso.with(ctx)
-//                        .load(image1.getPhoto().replace("http" , "https"))
-//                        .into(view.image);
+                        new PicassoImageLoader(view.image,view.progressBar).load(p.getPhoto().replace("http" , "https"),options);
+
                     }
                 });
             }
@@ -170,15 +165,15 @@ public class AdapterCityNews extends RecyclerView.Adapter<RecyclerView.ViewHolde
             view.image.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    if(image1.getPhoto().charAt((image1.getPhoto().length())-1) == '='){
+                    if(p.getPhoto().charAt((p.getPhoto().length())-1) == '='){
                         Intent n = new Intent(ctx , ShowImageActivity.class);
-                        n.putExtra("image_url" , image1.getPhoto().replace("http" , "https") + p.getNewsItemId());
+                        n.putExtra("image_url" , p.getPhoto().replace("http" , "https") + p.getNewsItemId());
                         ctx.startActivity(n);
                         Animatoo.animateSplit(ctx);
 
                     } else {
                         Intent n = new Intent(ctx , ShowImageActivity.class);
-                        n.putExtra("image_url" , image1.getPhoto().replace("http" , "https"));
+                        n.putExtra("image_url" , p.getPhoto().replace("http" , "https"));
                         ctx.startActivity(n);
                         Animatoo.animateSplit(ctx);
 
@@ -189,10 +184,10 @@ public class AdapterCityNews extends RecyclerView.Adapter<RecyclerView.ViewHolde
             view.name.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    if(p.getWebURL()!=null ) {
-                        if(!p.getWebURL().equals("")){
+                    if(p.getWebUrl()!=null ) {
+                        if(!p.getWebUrl().equals("")){
                             Intent n = new Intent(ctx, FullStoryOfNews.class);
-                            n.putExtra("url", p.getWebURL());
+                            n.putExtra("url", p.getWebUrl());
                             ctx.startActivity(n);
                         }
                     }

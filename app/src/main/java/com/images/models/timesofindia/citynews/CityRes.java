@@ -7,13 +7,13 @@ import com.google.gson.annotations.SerializedName;
 public class CityRes{
 
 	@SerializedName("Item")
-	private List<ItemItem> item;
+	private List<ItemItemCity> item;
 
-	public void setItem(List<ItemItem> item){
+	public void setItem(List<ItemItemCity> item){
 		this.item = item;
 	}
 
-	public List<ItemItem> getItem(){
+	public List<ItemItemCity> getItem(){
 		return item;
 	}
 

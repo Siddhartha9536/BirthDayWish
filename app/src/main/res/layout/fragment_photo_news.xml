@@ -97,6 +97,7 @@
 
                 <LinearLayout
                     android:id="@+id/by_lyt"
+                    android:visibility="gone"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
                     <TextView
@@ -142,6 +143,7 @@
 
                 <ScrollView
                     android:id="@+id/brief_scroll"
+                    android:visibility="gone"
                     android:layout_width="match_parent"
                     android:paddingTop="@dimen/px_5.0_dp"
                     android:paddingHorizontal="@dimen/px_15.0_dp"

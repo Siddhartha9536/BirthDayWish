@@ -1,4 +1,4 @@
-package com.images.activities.citynews;
+package com.images.activities.nrinews;
 
 import android.content.Context;
 import android.os.AsyncTask;
@@ -6,7 +6,6 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.util.Log;
 import android.view.View;
-import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -28,8 +27,10 @@ import com.images.models.timesofindia.citynews.ItemItemCity;
 import com.images.models.timesofindia.topnews.NewsItemItem;
 import com.images.models.timesofindia.topnews.TopNewsRes;
 import com.restaurant.birthdaywish.R;
+
 import java.util.ArrayList;
 import java.util.List;
+
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
@@ -37,13 +38,13 @@ import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.Response;
 
-public class CityNewsActivity extends AppCompatActivity {
+public class NriNewsActivity extends AppCompatActivity {
 
     private ViewPager view_pager;
     private TabLayout tab_layout;
     private final static int LOADING_DURATION = 5500;
     ItemItem itemItem;
-    List<com.images.models.timesofindia.citynews.ItemItemCity> itemItems;
+    List<ItemItemCity> itemItems;
     Context context;
     @BindView(R.id.lyt_progress)
     LinearLayout lyt_progress;
@@ -57,7 +58,7 @@ public class CityNewsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_city_news);
 
-        context = CityNewsActivity.this;
+        context = NriNewsActivity.this;
         ButterKnife.bind(this);
         itemItem = (ItemItem) getIntent().getSerializableExtra("data");
         Log.d("TAG", "onCreate: " + itemItem.toString());
@@ -99,14 +100,19 @@ public class CityNewsActivity extends AppCompatActivity {
         SectionsPagerAdapter adapter = new SectionsPagerAdapter(getSupportFragmentManager());
 
         for(int i=0;i<itemItems.size();i++){
-//            OkHttpHandlerDetails okHttpHandlerDetails = new OkHttpHandlerDetails(itemItems.get(i).getUrl());
-//            okHttpHandlerDetails.execute();
-//            if(newsItemItems!=null) {
-                if (!itemItems.get(i).getCategory().equalsIgnoreCase("featured")) {
+
+                if (!itemItems.get(i).getCategory().equalsIgnoreCase("NRI Achievers") && !itemItems.get(i).getCategory().equalsIgnoreCase("Contributions")) {
                     adapter.addFragment(FragmentTabsStore.newInstance(itemItems.get(i)), itemItems.get(i).getCategory());
                     Log.d("TAG", "initComponent: " + itemItems.get(i).getCategory());
                 }
-//            }
+//                else  if (!itemItems.get(i).getCategory().equalsIgnoreCase("Contributions")) {
+//                    adapter.addFragment(FragmentTabsStore.newInstance(itemItems.get(i)), itemItems.get(i).getCategory());
+//                    Log.d("TAG", "initComponent: " + itemItems.get(i).getCategory());
+//                }else  if (!itemItems.get(i).getCategory().equalsIgnoreCase("NRI Achievers")) {
+//                    adapter.addFragment(FragmentTabsStore.newInstance(itemItems.get(i)), itemItems.get(i).getCategory());
+//                    Log.d("TAG", "initComponent: " + itemItems.get(i).getCategory());
+//                }
+
         }
 
         view_pager.setAdapter(adapter);
